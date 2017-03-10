@@ -7,6 +7,10 @@ A sci-fi market trading game
 - Express
 - React Native
 
+##Style Guide
+- ES6
+- Do use `function` keyword when you need to make use of `this`
+- Beautify code before staging to commit
 
 ##Branch Management
 ###Start a feature
