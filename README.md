@@ -3,7 +3,9 @@ A sci-fi market trading game
 
 ##Getting started
 You'll need React Native's command line tools. Run:
-`npm install -g react-native-cli`
+```
+$ npm install -g react-native-cli
+```
 
 ##Technologies
 - MongoDB
@@ -30,8 +32,8 @@ feature you've named the branch after.
 - Modify only the files you need to deliver that feature.
 
 ###Pushing
-- Then run `git add -A` before you `commit`.
-- For the first push on a feature always run `git push -u origin {some_feature}`
+- Then run `$ git add -A` before you `commit`.
+- For the first push on a feature always run `$ git push -u origin {some_feature}`
 
 ###Merging
 Our three core branches will be `development`, `staging`, and `master`. These
