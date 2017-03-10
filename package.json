@@ -1,0 +1,19 @@
+{
+  "name": "mettle",
+  "version": "1.0.0",
+  "description": "Sci Fi Market Trading Game",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benflock/mettle.git"
+  },
+  "author": "PBJS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benflock/mettle/issues"
+  },
+  "homepage": "https://github.com/benflock/mettle#readme"
+}
