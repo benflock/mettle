@@ -50,3 +50,17 @@ request will be done to merge it into the staging branch.
 The master branch is continuously deployed. The staging branch is merged into
 this whenever all features in staging work properly together and all testing is
 passed.
+
+##Setup Virtual Devices
+###Xcode
+Make sure Xcode is installed
+```
+$ react-native run-ios
+```
+###android
+Follow these guides to install Android SDK
+https://facebook.github.io/react-native/releases/0.23/docs/android-setup.html
+https://facebook.github.io/react-native/docs/getting-started.html
+```
+$ react-native run-android
+```
