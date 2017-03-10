@@ -5,7 +5,6 @@ A sci-fi market trading game
 You'll need React Native's command line tools. Run:
 ```
 $ brew update && brew upgrade
-$ npm install -g react-native-cli
 ```
 
 ##Technologies
@@ -52,6 +51,9 @@ this whenever all features in staging work properly together and all testing is
 passed.
 
 ##Setup Virtual Devices
+```
+$ npm install -g react-native-cli
+```
 ###Xcode
 Make sure Xcode is installed <br />
 Xcode -> Preferences... -> Locations -> Command Line Tools: Xcode 8.2.1 (8C1002)
