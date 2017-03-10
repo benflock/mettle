@@ -23,7 +23,7 @@ feature you've named the branch after.
 
 ###Pushing
 - Then run `git add -A` before you `commit`.
-- To push always run `git push -u origin {some_feature}`
+- For the first push on a feature always run `git push -u origin {some_feature}`
 
 ###Merging
 Our three core branches will be `development`, `staging`, and `master`. These
