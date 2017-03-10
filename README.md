@@ -53,16 +53,15 @@ passed.
 
 ##Setup Virtual Devices
 ###Xcode
-Make sure Xcode is installed
+Make sure Xcode is installed <br />
+Xcode -> Preferences... -> Locations -> Command Line Tools: Xcode 8.2.1 (8C1002)
 ```
 $ react-native run-ios
 ```
-###android
-Follow these guides to install Android SDK
-
-https://facebook.github.io/react-native/releases/0.23/docs/android-setup.html
-
-https://facebook.github.io/react-native/docs/getting-started.html
+###Android
+Follow these guides to install Android SDK<br />
+https://facebook.github.io/react-native/releases/0.23/docs/android-setup.html <br />
+https://facebook.github.io/react-native/docs/getting-started.html 
 ```
 $ react-native run-android
 ```
