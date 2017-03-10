@@ -1,16 +1,29 @@
-##A Note About Branch Management
+#Mettle
+A sci-fi market trading game
+
+##Technologies
+- MongoDB
+- Node.js
+- Express
+- React Native
+
+
+##Branch Management
+###Start a feature
 - Decide which feature you are working on.
 - Before coding run
-`$ git checkout master
+```
+$ git checkout master
 $ git pull origin master
-$ git checkout -b {some_feature}`
+$ git checkout -b {some_feature}
+```
 - To minimize merge conflicts and duplication of efforts try to work on only the
 feature you've named the branch after.
 - Modify only the files you need to deliver that feature.
+###Pushing
 - Then run `git add -A` before you `commit`.
 - To push always run `git push -u origin {some_feature}`
-
-##Merging
+###Merging
 Our three core branches will be `development`, `staging`, and `master`. These
 branches are not to be pushed to. They are modified through pull requests.
 ###The Development Branch
