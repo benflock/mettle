@@ -4,7 +4,9 @@
   "description": "Sci Fi Market Trading Game",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "release:ios": "react-native run-ios --configuration Release",
+    "release:android": "react-native run-android --configuration Release"
   },
   "repository": {
     "type": "git",
@@ -20,7 +22,8 @@
     "chai": "^3.5.0",
     "mocha": "^3.2.0",
     "nodemon": "^1.11.0",
-    "supertest": "^3.0.0"
+    "supertest": "^3.0.0",
+    "watchman": "^0.1.8"
   },
   "engines": {
     "node": "^7.7.1"

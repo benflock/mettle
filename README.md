@@ -1,6 +1,10 @@
 #Mettle
 A sci-fi market trading game
 
+##Getting started
+You'll need React Native's command line tools. Run:
+`npm install -g react-native-cli`
+
 ##Technologies
 - MongoDB
 - Node.js
