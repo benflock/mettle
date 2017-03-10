@@ -20,20 +20,22 @@ $ git checkout -b {some_feature}
 - To minimize merge conflicts and duplication of efforts try to work on only the
 feature you've named the branch after.
 - Modify only the files you need to deliver that feature.
+
 ###Pushing
 - Then run `git add -A` before you `commit`.
 - To push always run `git push -u origin {some_feature}`
+
 ###Merging
 Our three core branches will be `development`, `staging`, and `master`. These
 branches are not to be pushed to. They are modified through pull requests.
-###The Development Branch
+####The Development Branch
 The development branch will contain experimental features that we may be still debugging
 and troubleshooting.
-###The Staging Branch
+####The Staging Branch
 The staging branch is intended to make sure features work properly together with
 all other features. When a feature is functioning properly on its own, a pull
 request will be done to merge it into the staging branch.
-###The Master Branch
+####The Master Branch
 The master branch is continuously deployed. The staging branch is merged into
 this whenever all features in staging work properly together and all testing is
 passed.
