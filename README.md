@@ -59,6 +59,7 @@ $ react-native run-ios
 ```
 ###android
 Follow these guides to install Android SDK
+
 https://facebook.github.io/react-native/releases/0.23/docs/android-setup.html
 https://facebook.github.io/react-native/docs/getting-started.html
 ```
