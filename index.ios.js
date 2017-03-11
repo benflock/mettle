@@ -23,41 +23,38 @@ export default class mettle extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={{ fontFamily: 'Iowan Old Style', color: 'cyan', fontSize: 60, }}>Mettle</Text>
-
+        <Text style={styles.title}>Mettle</Text>
+          <View style={styles.line_break}></View>
+          <View style={styles.line_break}></View>
         <View style={[styles.border, styles.box]}>
           <TouchableHighlight onPress={onButtonPress}>
-            <Text style={{ fontFamily: 'Helvetica', color: 'cyan', textAlign: 'center', padding: 8, fontSize: 18}}>Button</Text>
+            <Text style={styles.button}>New</Text>
           </TouchableHighlight>
         </View>
         <View style={styles.line_break}></View>
-        <View style={[styles.border, styles.box]}>
-          <Button
-            onPress={onButtonPress}
-            title="CONTINUE"
-            color="cyan"
-            accessibilityLabel="Learn more about this purple button"
-            />
-        </View>
+          <View style={[styles.border, styles.box]}>
+            <TouchableHighlight onPress={onButtonPress}>
+              <Text style={styles.button}>Continue</Text>
+            </TouchableHighlight>
+          </View>
         <View style={styles.line_break}></View>
-        <View style={[styles.border, styles.box]}>
-          <Button
-            onPress={onButtonPress}
-            title="SCORES"
-            color="cyan"
-            accessibilityLabel="Learn more about this purple button"
-            />
-        </View>
+          <View style={[styles.border, styles.box]}>
+            <TouchableHighlight onPress={onButtonPress}>
+              <Text style={styles.button}>Scores</Text>
+            </TouchableHighlight>
+          </View>
         <View style={styles.line_break}></View>
-        <View style={[styles.border, styles.box]}>
-          <Button
-            onPress={onButtonPress}
-            title="LOGIN"
-            color="cyan"
-            fontFamily="Times"
-            accessibilityLabel="Learn more about this purple button"
-            />
-        </View>
+          <View style={[styles.border, styles.box]}>
+            <TouchableHighlight onPress={onButtonPress}>
+              <Text style={styles.button}>Login</Text>
+            </TouchableHighlight>
+          </View>
+        <View style={styles.line_break}></View>
+          <View style={[styles.border, styles.box]}>
+            <TouchableHighlight onPress={onButtonPress}>
+              <Text style={styles.button}>How to play</Text>
+              </TouchableHighlight>
+          </View>
       </View>
     );
   }
@@ -69,18 +66,25 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'black',
-    // fontFamily: 'Futura'
   },
   border: {
-    borderWidth: 4,
+    borderWidth: 3,
     borderColor: 'cyan',
   },
   box: {
     height: 45,
-    width: 240,
+    width: 300,
+  },
+  title: {
+    color: 'cyan',
+    fontSize: 80,
+    alignItems: 'flex-start'
   },
   button: {
     color: 'cyan',
+    textAlign: 'center',
+    padding: 8,
+    fontSize: 18
   },
   line_break: {
     height: 40,
