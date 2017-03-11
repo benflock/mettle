@@ -9,23 +9,55 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  Button,
+  Alert,
+  View,
+  TouchableHighlight
 } from 'react-native';
+
+const onButtonPress = () => {
+  Alert.alert('Button has been pressed!');
+};
 
 export default class mettle extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          PBJs
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+        <Text style={{ fontFamily: 'Iowan Old Style', color: 'cyan', fontSize: 60, }}>Mettle</Text>
+
+        <View style={[styles.border, styles.box]}>
+          <TouchableHighlight onPress={onButtonPress}>
+            <Text style={{ fontFamily: 'Helvetica', color: 'cyan', textAlign: 'center', padding: 8, fontSize: 18}}>Button</Text>
+          </TouchableHighlight>
+        </View>
+        <View style={styles.line_break}></View>
+        <View style={[styles.border, styles.box]}>
+          <Button
+            onPress={onButtonPress}
+            title="CONTINUE"
+            color="cyan"
+            accessibilityLabel="Learn more about this purple button"
+            />
+        </View>
+        <View style={styles.line_break}></View>
+        <View style={[styles.border, styles.box]}>
+          <Button
+            onPress={onButtonPress}
+            title="SCORES"
+            color="cyan"
+            accessibilityLabel="Learn more about this purple button"
+            />
+        </View>
+        <View style={styles.line_break}></View>
+        <View style={[styles.border, styles.box]}>
+          <Button
+            onPress={onButtonPress}
+            title="LOGIN"
+            color="cyan"
+            fontFamily="Times"
+            accessibilityLabel="Learn more about this purple button"
+            />
+        </View>
       </View>
     );
   }
@@ -36,18 +68,23 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: 'black',
+    // fontFamily: 'Futura'
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  border: {
+    borderWidth: 4,
+    borderColor: 'cyan',
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  box: {
+    height: 45,
+    width: 240,
   },
+  button: {
+    color: 'cyan',
+  },
+  line_break: {
+    height: 40,
+  }
 });
 
 AppRegistry.registerComponent('mettle', () => mettle);
