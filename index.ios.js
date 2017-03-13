@@ -39,7 +39,6 @@ export class Home extends Component {
       component: component,
       passProps: {
       	title: title,
-        money: money
       }
     })
   }
@@ -48,7 +47,7 @@ export class Home extends Component {
     return (
     	<View style={ styles.container }>
       	<Text style={ styles.heading }>Mettle</Text>
-          <MainButton title="New Game" navHandler={ () => this._navigate('New Game', NewGame, 10) }  />
+          <MainButton title="New Game" navHandler={ () => this._navigate('New Game', NewGame) }  />
           <MainButton title="Continue" navHandler={ () => this._navigate('Continue', Continue) }  />
           <MainButton title="Scores" navHandler={ () => this._navigate('Scores', Scores) }  />
           <MainButton title="Login" navHandler={ () => this._navigate('Login', Login) }  />

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Start from './Start'
 import {
   StyleSheet,
   Text,
@@ -7,30 +6,22 @@ import {
   TouchableHighlight
 } from 'react-native';
 
-export default class NewGame extends Component{
+export default class Start extends Component{
 
   constructor(props) {
   super(props);
-    this.state = {
-      money: 10,
-      cargo: 100
-    };
+    this.state = this.props.newGameState
   }
-
-  AsyncStorage.setItem("myKey", "My value here");
 
 	render() {
     return (
     	<View style={ styles.container }>
       	<Text style={ styles.heading }>{ this.props.title }</Text>
-        <Text>{ this.state.money }</Text>
- 				<TouchableHighlight style={ styles.button } onPress={ () => this.setState((prevState, props) => ({money: prevState.money += 1})) }>
-      		<Text style={ styles.buttonText }>Start Game</Text>
-      	</TouchableHighlight>
-        <TouchableHighlight style={ styles.button } onPress={ () => this.props.navigator.jumpBack() }>
-          <Text style={ styles.buttonText }>jump Back</Text>
+        <Text>{ this.props.newGameState.money }</Text>
+        <TouchableHighlight style={ styles.button } onPress={ this.setState((prevState, props) => ({money: prevState.money + props.increment})) }>
+          <Text style={ styles.buttonText }>Increase money</Text>
         </TouchableHighlight>
-        <Text>this is the new game page, NO JOKE</Text>
+        <Text>this is the how to play page, NO JOKE</Text>
       </View>
     )
   }
