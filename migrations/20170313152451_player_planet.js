@@ -1,8 +1,8 @@
 
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('player_planet', function(player_planet) {
-    player_planet.integer();//Needs to be set as a key
-    player_planet.integer();//Needs to be set as a key
+    player_planet.integer('planet_id').references('planet.id');
+    player_planet.integer('player_id').references('player.id');
   })
 };
 

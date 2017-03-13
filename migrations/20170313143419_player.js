@@ -1,7 +1,7 @@
 
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('player', function(player) {
-    player.increments();
+    player.increments('id').primary();
     player.integer('current_round').notNullable();
     player.integer('current_credit').notNullable();
     player.integer('high_score1');

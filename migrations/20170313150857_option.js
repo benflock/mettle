@@ -1,9 +1,9 @@
 
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('option', function(option) {
-    option.increments();
-    option.integer('event_id').notNullable();
-    option.text('description').notNullable();//Need to set a PK
+    option.increments('id').primary();
+    option.integer('event_id').notNullable().references('event.id');
+    option.text('description').notNullable();
     option.text('outcome').notNullable();
     option.text('label').notNullable();
   })
