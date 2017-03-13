@@ -5,7 +5,6 @@ A sci-fi market trading game
 You'll need React Native's command line tools. Run:
 ```
 $ brew update && brew upgrade
-$ npm install -g react-native-cli
 ```
 
 ##Technologies
@@ -50,3 +49,21 @@ request will be done to merge it into the staging branch.
 The master branch is continuously deployed. The staging branch is merged into
 this whenever all features in staging work properly together and all testing is
 passed.
+
+##Setup Virtual Devices
+```
+$ npm install -g react-native-cli
+```
+###Xcode
+Make sure Xcode is installed <br />
+Xcode -> Preferences... -> Locations -> Command Line Tools: Xcode 8.2.1 (8C1002)
+```
+$ react-native run-ios
+```
+###Android
+Follow these guides to install Android SDK<br />
+https://facebook.github.io/react-native/releases/0.23/docs/android-setup.html <br />
+https://facebook.github.io/react-native/docs/getting-started.html 
+```
+$ react-native run-android
+```
