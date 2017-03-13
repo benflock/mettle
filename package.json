@@ -2,7 +2,7 @@
   "name": "mettle",
   "version": "1.0.0",
   "description": "Sci Fi Market Trading Game",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "mocha",
     "release:ios": "react-native run-ios --configuration Release",
@@ -27,5 +27,17 @@
   },
   "engines": {
     "node": "^7.7.2"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "dotenv": "^4.0.0",
+    "express": "~4.14.0",
+    "hbs": "^4.0.1",
+    "knex": "^0.12.7",
+    "method-override": "^2.3.7",
+    "nodemon": "^1.11.0",
+    "pg": "^6.1.4"
   }
 }
