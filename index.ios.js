@@ -1,94 +1,84 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
+import NewGame from './src/NewGame'
+import Continue from './src/Continue'
+import Scores from './src/Scores'
+import Login from './src/Login'
+import HowToPlay from './src/HowToPlay'
+import MainButton from './src/MainButton'
 import {
   AppRegistry,
   StyleSheet,
   Text,
-  Button,
-  Alert,
   View,
+  Navigator,
   TouchableHighlight
 } from 'react-native';
 
-const onButtonPress = () => {
-  Alert.alert('Button has been pressed!');
-};
+export default class App extends Component {
 
-export default class mettle extends Component {
+  renderScene(route, navigator) {
+    let RouteComponent = route.component
+    return <RouteComponent navigator={navigator} {...route.passProps} />
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.title}>Mettle</Text>
-          <View style={styles.line_break}></View>
-          <View style={styles.line_break}></View>
-        <View style={[styles.border, styles.box]}>
-          <TouchableHighlight onPress={onButtonPress}>
-            <Text style={styles.button}>New</Text>
-          </TouchableHighlight>
-        </View>
-        <View style={styles.line_break}></View>
-          <View style={[styles.border, styles.box]}>
-            <TouchableHighlight onPress={onButtonPress}>
-              <Text style={styles.button}>Continue</Text>
-            </TouchableHighlight>
-          </View>
-        <View style={styles.line_break}></View>
-          <View style={[styles.border, styles.box]}>
-            <TouchableHighlight onPress={onButtonPress}>
-              <Text style={styles.button}>Scores</Text>
-            </TouchableHighlight>
-          </View>
-        <View style={styles.line_break}></View>
-          <View style={[styles.border, styles.box]}>
-            <TouchableHighlight onPress={onButtonPress}>
-              <Text style={styles.button}>Login</Text>
-            </TouchableHighlight>
-          </View>
-        <View style={styles.line_break}></View>
-          <View style={[styles.border, styles.box]}>
-            <TouchableHighlight onPress={onButtonPress}>
-              <Text style={styles.button}>How to play</Text>
-              </TouchableHighlight>
-          </View>
+      <Navigator
+      	style={{ flex:1 }}
+        initialRoute={{ component: Home }}
+        renderScene={ this.renderScene } />
+    )
+  }
+}
+
+export class Home extends Component {
+
+  _navigate(title, component, money) {
+  	this.props.navigator.push({
+    	name: title,
+      component: component,
+      passProps: {
+      	title: title,
+        money: money
+      }
+    })
+  }
+
+	render() {
+    return (
+    	<View style={ styles.container }>
+      	<Text style={ styles.heading }>Mettle</Text>
+          <MainButton title="New Game" navHandler={ () => this._navigate('New Game', NewGame, 10) }  />
+          <MainButton title="Continue" navHandler={ () => this._navigate('Continue', Continue) }  />
+          <MainButton title="Scores" navHandler={ () => this._navigate('Scores', Scores) }  />
+          <MainButton title="Login" navHandler={ () => this._navigate('Login', Login) }  />
+          <MainButton title="How To Play" navHandler={ () => this._navigate('How To Play', HowToPlay) }  />
       </View>
-    );
+    )
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'black',
+    alignItems: 'center'
   },
-  border: {
-    borderWidth: 3,
-    borderColor: 'cyan',
-  },
-  box: {
-    height: 45,
-    width: 300,
-  },
-  title: {
-    color: 'cyan',
-    fontSize: 80,
-    alignItems: 'flex-start'
+   heading: {
+  	fontSize:30,
+    marginBottom:30,
+    marginTop: 40,
   },
   button: {
-    color: 'cyan',
-    textAlign: 'center',
-    padding: 8,
-    fontSize: 18
+  	height:60,
+    width: 600,
+    justifyContent: 'center',
+    backgroundColor: '#efefef',
+    alignItems: 'center',
+    marginBottom: 30
   },
-  line_break: {
-    height: 40,
+  buttonText: {
+  	fontSize:20
   }
 });
 
-AppRegistry.registerComponent('mettle', () => mettle);
+AppRegistry.registerComponent('mettle', () => App);
