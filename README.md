@@ -1,18 +1,13 @@
 #Mettle
 A sci-fi market trading game
 
-##Getting started
-You'll need React Native's command line tools. Run:
-```
-$ brew update && brew upgrade
-$ npm install -g react-native-cli
-```
-
 ##Technologies
-- MongoDB
+- Redis
 - Node.js
 - Express
 - React Native
+- AWS Lamda
+- AWS API Gateway
 
 ##Style Guide
 - ES6
@@ -52,6 +47,10 @@ this whenever all features in staging work properly together and all testing is
 passed.
 
 ##Setup Virtual Devices
+You'll need react native's command line tools
+```
+$ npm install -g react-native-cli
+```
 ###Xcode
 Make sure Xcode is installed <br />
 Xcode -> Preferences... -> Locations -> Command Line Tools: Xcode 8.2.1 (8C1002)
@@ -61,7 +60,7 @@ $ react-native run-ios
 ###Android
 Follow these guides to install Android SDK<br />
 https://facebook.github.io/react-native/releases/0.23/docs/android-setup.html <br />
-https://facebook.github.io/react-native/docs/getting-started.html 
+https://facebook.github.io/react-native/docs/getting-started.html
 ```
 $ react-native run-android
 ```
