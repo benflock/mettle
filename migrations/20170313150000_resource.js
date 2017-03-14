@@ -7,7 +7,7 @@ exports.up = function(knex, Promise) {
     resource.integer('cost_range').notNullable();
     resource.integer('qty_base').notNullable();
     resource.integer('qty_range').notNullable();
-    resource.integer('weight').decimal('price_mod', 6, 2).notNullable();
+    resource.decimal('weight', 6, 2).notNullable();
   })
 };
 
