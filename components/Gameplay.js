@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PlanetMap from './PlanetMap'
 import InfoBar from './InfoBar';
+import TravelBar from './TravelBar';
 import {
   AppRegistry,
   StyleSheet,
@@ -15,7 +16,7 @@ export default class Gameplay extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      cargo: 98,
+      cargo: 100,
       round: 1,
       credits: 100
     }
@@ -33,6 +34,7 @@ export default class Gameplay extends Component {
       <Navigator
         initialRoute={{ component: PlanetMap }}
         renderScene={ this.renderScene } />
+        <TravelBar />
       </View>
     )
   }

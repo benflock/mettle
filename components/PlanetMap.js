@@ -6,7 +6,7 @@ import {
   TouchableHighlight,
 } from 'react-native';
 import InfoBar from './InfoBar';
-import Gar from './Planets/Gar';
+import ShopLayout from './ShopLayout';
 import MainButton from './MainButton'
 
 export default class PlanetMap extends Component {
@@ -20,11 +20,12 @@ export default class PlanetMap extends Component {
     }
   }
 
-  _navigate(playerData, component) {
+  _navigate(playerData, component, planetName) {
     this.props.navigator.push({
       component: component,
       passProps: {
-        playerData: playerData
+        playerData: playerData,
+        planet: planetName,
       }
     })
   }
@@ -38,7 +39,14 @@ export default class PlanetMap extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>Travel to a planet</Text>
-        <MainButton title="Gar" navHandler={ () => this._navigate(playerData, Gar) }  />
+        <MainButton title="Gar" navHandler={ () => this._navigate(playerData, ShopLayout, 'GAR') }  />
+        <MainButton title="Terra Epsilon" navHandler={ () => this._navigate(playerData, ShopLayout, 'TERRA EPSILON') }  />
+        <MainButton title="Niflhogg" navHandler={ () => this._navigate(playerData, ShopLayout, 'NIFLHOGG') }  />
+        <MainButton title="Station Corbino" navHandler={ () => this._navigate(playerData, ShopLayout, 'STATION CORBINO') }  />
+        <MainButton title="Retheon" navHandler={ () => this._navigate(playerData, ShopLayout, 'RETHEON') }  />
+        <MainButton title="Desodrox Outpost" navHandler={ () => this._navigate(playerData, ShopLayout, 'DESODROX OUTPOST') }  />
+        <MainButton title="Azaz" navHandler={ () => this._navigate(playerData, ShopLayout, 'AZAZ') }  />
+        <MainButton title="Zorvos" navHandler={ () => this._navigate(playerData, ShopLayout, 'ZORVOS') }  />
       </View>
     )
   }

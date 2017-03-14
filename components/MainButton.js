@@ -30,12 +30,12 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   button: {
-  	height:60,
+  	height:45,
     width: 600,
     justifyContent: 'center',
     backgroundColor: '#efefef',
     alignItems: 'center',
-    marginBottom: 30
+    borderTopWidth: 1
   },
   buttonText: {
   	fontSize:20

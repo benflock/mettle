@@ -5,17 +5,15 @@ import {
   View,
   TouchableHighlight,
 } from 'react-native';
-import InfoBar from '../InfoBar';
-import TravelBar from '../TravelBar';
+import InfoBar from './InfoBar';
 
 
 
-export default class Gar extends Component {
+export default class ShopLayout extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.planet}>WELCOME TO GAR!!!!</Text>
-        <TravelBar />
+        <Text style={styles.planet}>WELCOME TO {this.props.planet}!!!!</Text>
       </View>
     )
   }

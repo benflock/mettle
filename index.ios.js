@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import PlanetMap from './src/PlanetMap'
-import Gameplay from './src/Gameplay'
-import Continue from './src/Continue'
-import Scores from './src/Scores'
-import Login from './src/Login'
-import HowToPlay from './src/HowToPlay'
-import MainButton from './src/MainButton'
-import InfoBar from './src/InfoBar';
+import PlanetMap from './components/PlanetMap'
+import Gameplay from './components/Gameplay'
+import Continue from './components/Continue'
+import Scores from './components/Scores'
+import Login from './components/Login'
+import HowToPlay from './components/HowToPlay'
+import MainButton from './components/MainButton'
+import InfoBar from './components/InfoBar';
 import {
   AppRegistry,
   StyleSheet,
