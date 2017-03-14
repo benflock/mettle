@@ -6,8 +6,8 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       //Check me too!
       const player_events = [{
-        player_id: ,
-        event_id
+        player_id: 1,
+        event_id: 1
       }];
 
       return knex('player_event').insert(player_events);

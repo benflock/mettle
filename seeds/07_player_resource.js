@@ -6,9 +6,9 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       //Not sure about this seed, please check me!
       const player_resources = [{
-        player_id: ,
-        resource_id: ,
-        qty:
+        player_id: 1,
+        resource_id: 2,
+        qty: 2
       }];
 
       return knex('player_resource').insert(player_resources);
