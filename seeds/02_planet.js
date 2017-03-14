@@ -12,7 +12,7 @@ exports.seed = function(knex, Promise) {
       style: '',
       neighbor1: ,
       neighbor2: 
-    }];
+    },];
 
     return knex('planet').insert(planets);
 

@@ -7,7 +7,7 @@ exports.seed = function(knex, Promise) {
 
       const events = [{
         name: '',
-        type: [],
+        type: 'plot',
         description: ''
       }];
 
