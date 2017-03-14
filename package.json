@@ -1,14 +1,14 @@
 {
   "name": "mettle",
   "version": "1.0.0",
-	"private": true,
+  "private": true,
   "description": "Sci Fi Market Trading Game",
   "main": "index.js",
   "scripts": {
     "release:ios": "react-native run-ios --configuration Release",
     "release:android": "react-native run-android --configuration Release",
     "start": "node node_modules/react-native/local-cli/cli.js start",
-		"test": "jest"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -20,10 +20,28 @@
     "url": "https://github.com/benflock/mettle/issues"
   },
   "homepage": "https://github.com/benflock/mettle#readme",
-	"dependencies": {
-		"react": "~15.4.1",
-		"react-native": "0.42.0"
-	},
+  "dependencies": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.2",
+    "path": "^0.12.7",
+    "react": "~15.4.1",
+    "react-native": "0.42.0"
+=======
+=======
+>>>>>>> 2b5ae36164fdedcf190c643a55883a164bc8f9b7
+    "knex": "^0.12.7",
+    "pg": "^6.1.4",
+    "react": "~15.4.1",
+    "react-native": "0.42.0",
+    "redis": "^2.6.5"
+<<<<<<< HEAD
+>>>>>>> 2b5ae36164fdedcf190c643a55883a164bc8f9b7
+=======
+>>>>>>> 2b5ae36164fdedcf190c643a55883a164bc8f9b7
+  },
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^3.2.0",
@@ -31,13 +49,13 @@
     "supertest": "^3.0.0",
     "watchman": "^0.1.8",
     "babel-jest": "19.0.0",
-		"babel-preset-react-native": "1.9.1",
-		"jest": "19.0.2",
-		"react-test-renderer": "~15.4.1"
+    "babel-preset-react-native": "1.9.1",
+    "jest": "19.0.2",
+    "react-test-renderer": "~15.4.1"
   },
-	"jest": {
-		"preset": "react-native"
-	},
+  "jest": {
+    "preset": "react-native"
+  },
   "engines": {
     "node": "^7.7.2"
   }
