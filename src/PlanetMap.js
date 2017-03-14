@@ -5,11 +5,19 @@ import {
   View,
   TouchableHighlight,
 } from 'react-native';
+import InfoBar from './InfoBar';
+import Gar from './Planets/Gar';
+import MainButton from './MainButton'
 
 export default class PlanetMap extends Component {
 
   constructor(props) {
     super(props)
+    this.state = {
+      cargo: 98,
+      round: 1,
+      credits: 100
+    }
   }
 
   _navigate(playerData, component) {
@@ -22,9 +30,15 @@ export default class PlanetMap extends Component {
   }
 
   render() {
+    var playerData = {
+      cargo: this.state.cargo,
+      round: this.state.round,
+      credits: this.state.credits
+    }
     return (
-      <View style={ styles.container }>
-        <Text style={ styles.heading }>Map</Text>
+      <View style={styles.container}>
+        <Text style={styles.heading}>Travel to a planet</Text>
+        <MainButton title="Gar" navHandler={ () => this._navigate(playerData, Gar) }  />
       </View>
     )
   }
