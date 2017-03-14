@@ -1,0 +1,10 @@
+# This is the attribution and author info for all sourced art asset files.
+
+## PixelPlanets.png:
+- public domain, no attribution required
+- [http://opengameart.org/content/pixel-planets](http://opengameart.org/content/pixel-planets)
+
+## sprites14c.png
+- various icons, including 'arrow_to_planet' and 'arrow_from_planet'
+- [Please observe the original attribution instructions: 141 Military Icons Set by AngryMeteor.com under CC-BY 3.0 license](http://opengameart.org/content/141-military-icons-set)
+- [http://opengameart.org/content/2d-static-spritesicons](http://opengameart.org/content/2d-static-spritesicons)
