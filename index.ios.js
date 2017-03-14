@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NewGame from './src/NewGame'
+import PlanetMap from './src/PlanetMap'
 import Continue from './src/Continue'
 import Scores from './src/Scores'
 import Login from './src/Login'
@@ -33,7 +33,7 @@ export default class App extends Component {
 
 export class Home extends Component {
 
-  _navigate(title, component, money) {
+  _navigate(title, component) {
   	this.props.navigator.push({
     	name: title,
       component: component,
@@ -47,7 +47,7 @@ export class Home extends Component {
     return (
     	<View style={ styles.container }>
       	<Text style={ styles.heading }>Mettle</Text>
-          <MainButton title="New Game" navHandler={ () => this._navigate('New Game', NewGame) }  />
+          <MainButton title="New Game" navHandler={ () => this._navigate('New Game', PlanetMap) }  />
           <MainButton title="Continue" navHandler={ () => this._navigate('Continue', Continue) }  />
           <MainButton title="Scores" navHandler={ () => this._navigate('Scores', Scores) }  />
           <MainButton title="Login" navHandler={ () => this._navigate('Login', Login) }  />
