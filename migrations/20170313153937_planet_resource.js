@@ -4,8 +4,8 @@ exports.up = function(knex, Promise) {
     planet_resource.integer('id').notNullable().primary();
     planet_resource.integer('planet_id').notNullable().references('planet.id');
     planet_resource.integer('resource_id').notNullable().references('resource.id');
-    planet_resource.integer('qty_mod');
-    planet_resource.integer('price_mod');
+    planet_resource.decimal('qty_mod', 3, 2);
+    planet_resource.decimal('price_mod', 3, 2);
   })
 };
 
