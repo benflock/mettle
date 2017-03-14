@@ -21,12 +21,20 @@
   },
   "homepage": "https://github.com/benflock/mettle#readme",
   "dependencies": {
+<<<<<<< HEAD
     "body-parser": "^1.17.1",
     "cookie-parser": "^1.4.3",
     "express": "^4.15.2",
     "path": "^0.12.7",
     "react": "~15.4.1",
     "react-native": "0.42.0"
+=======
+    "knex": "^0.12.7",
+    "pg": "^6.1.4",
+    "react": "~15.4.1",
+    "react-native": "0.42.0",
+    "redis": "^2.6.5"
+>>>>>>> 2b5ae36164fdedcf190c643a55883a164bc8f9b7
   },
   "devDependencies": {
     "chai": "^3.5.0",
