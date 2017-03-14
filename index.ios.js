@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import PlanetMap from './src/PlanetMap'
-import Continue from './src/Continue'
-import Scores from './src/Scores'
-import Login from './src/Login'
-import HowToPlay from './src/HowToPlay'
-import MainButton from './src/MainButton'
+import PlanetMap from './components/PlanetMap'
+import Gameplay from './components/Gameplay'
+import Continue from './components/Continue'
+import Scores from './components/Scores'
+import Login from './components/Login'
+import HowToPlay from './components/HowToPlay'
+import MainButton from './components/MainButton'
+import InfoBar from './components/InfoBar';
 import {
   AppRegistry,
   StyleSheet,
@@ -24,7 +26,7 @@ export default class App extends Component {
   render() {
     return (
       <Navigator
-      	style={{ flex:1 }}
+        style={{ flex:1 }}
         initialRoute={{ component: Home }}
         renderScene={ this.renderScene } />
     )
@@ -47,7 +49,7 @@ export class Home extends Component {
     return (
     	<View style={ styles.container }>
       	<Text style={ styles.heading }>Mettle</Text>
-          <MainButton title="New Game" navHandler={ () => this._navigate('New Game', PlanetMap) }  />
+          <MainButton title="New Game" navHandler={ () => this._navigate('New Game', Gameplay) }  />
           <MainButton title="Continue" navHandler={ () => this._navigate('Continue', Continue) }  />
           <MainButton title="Scores" navHandler={ () => this._navigate('Scores', Scores) }  />
           <MainButton title="Login" navHandler={ () => this._navigate('Login', Login) }  />
