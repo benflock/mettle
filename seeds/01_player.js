@@ -6,13 +6,13 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
 
     const players = [{
-      current_round: ,
-      current_credit: ,
-      high_score1: ,
-      high_score2: ,
-      high_score3: ,
-      debt: ,
-      weight_limit:
+      current_round: 12,
+      current_credit: 12,
+      high_score1: 12,
+      high_score2: 12,
+      high_score3: 12,
+      debt: 12,
+      weight_limit: 12
     }];
 
     return knex('player').insert(players);
