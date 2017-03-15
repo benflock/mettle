@@ -9,6 +9,7 @@ import InfoBar from './InfoBar';
 import ShopLayout from './ShopLayout';
 import MainButton from './MainButton'
 
+
 export default class PlanetMap extends Component {
 
   constructor(props) {
@@ -20,37 +21,76 @@ export default class PlanetMap extends Component {
     }
   }
 
-  _navigate(playerData, component, planetName) {
+  _navigate(playerData, component, planetData) {
     this.props.navigator.push({
       component: component,
       passProps: {
         playerData: playerData,
-        planet: planetName,
+        planetData: planetData,
       }
     })
   }
 
+
   render() {
-    var playerData = {
+    let playerData = {
       cargo: this.state.cargo,
       round: this.state.round,
       credits: this.state.credits
     }
+
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>Travel to a planet</Text>
-        <MainButton title="Gar" navHandler={ () => this._navigate(playerData, ShopLayout, 'GAR') }  />
-        <MainButton title="Terra Epsilon" navHandler={ () => this._navigate(playerData, ShopLayout, 'TERRA EPSILON') }  />
-        <MainButton title="Niflhogg" navHandler={ () => this._navigate(playerData, ShopLayout, 'NIFLHOGG') }  />
-        <MainButton title="Station Corbino" navHandler={ () => this._navigate(playerData, ShopLayout, 'STATION CORBINO') }  />
-        <MainButton title="Retheon" navHandler={ () => this._navigate(playerData, ShopLayout, 'RETHEON') }  />
-        <MainButton title="Desodrox Outpost" navHandler={ () => this._navigate(playerData, ShopLayout, 'DESODROX OUTPOST') }  />
-        <MainButton title="Azaz" navHandler={ () => this._navigate(playerData, ShopLayout, 'AZAZ') }  />
-        <MainButton title="Zorvos" navHandler={ () => this._navigate(playerData, ShopLayout, 'ZORVOS') }  />
+        <MainButton title="Gar" navHandler={ () => this._navigate(playerData, ShopLayout, planets.gar) }  />
+        <MainButton title="Terra Epsilon" navHandler={ () => this._navigate(playerData, ShopLayout, planets.terraEpsilon) }  />
+        <MainButton title="Niflhogg" navHandler={ () => this._navigate(playerData, ShopLayout, planets.niflhogg) }  />
+        <MainButton title="Station Corbino" navHandler={ () => this._navigate(playerData, ShopLayout, planets.stationCorbino) }  />
+        <MainButton title="Retheon" navHandler={ () => this._navigate(playerData, ShopLayout, planets.retheon) }  />
+        <MainButton title="Desodrox Outpost" navHandler={ () => this._navigate(playerData, ShopLayout, planets.desodroxOutpost) }  />
+        <MainButton title="Azaz" navHandler={ () => this._navigate(playerData, ShopLayout, planets.azaz) }  />
+        <MainButton title="Zorvos" navHandler={ () => this._navigate(playerData, ShopLayout, planets.zorvos) }  />
       </View>
     )
   }
 }
+
+
+let planets = {
+  gar: {
+    name: 'Gar',
+    imgSrc: require('../art_assets/planets/planet02.gif')
+  },
+  terraEpsilon: {
+    name: 'Tera Epsilon',
+    imgSrc: require('../art_assets/planets/planet04.gif')
+  },
+  desodroxOutpost: {
+    name: 'Desodrox Outpost',
+    imgSrc: require('../art_assets/planets/planet06.gif')
+  },
+  niflhogg: {
+    name: 'Niflhogg',
+    imgSrc: require('../art_assets/planets/planet05.gif')
+  },
+  retheon: {
+    name: 'Retheon',
+    imgSrc: require('../art_assets/planets/planet01.gif')
+  },
+  stationCorbino: {
+    name: 'Station Corbino',
+    imgSrc: require('../art_assets/planets/station.gif')
+  },
+  azaz: {
+    name: 'Azaz',
+    imgSrc: require('../art_assets/planets/planet03.gif')
+  },
+  zorvos: {
+    name: 'Zorvos',
+    imgSrc: require('../art_assets/planets/planet08.gif')
+  }
+}
+
 
 const styles = StyleSheet.create({
   container: {
