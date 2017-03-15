@@ -15,7 +15,7 @@ export default class ShopLayout extends Component {
   render() {
     return (
       <View style={{flex: 1, alignItems: 'center', backgroundColor: this.props.planetData.style}}>
-        <Text style={styles.planet}>WELCOME TO {this.props.planetData.name.toUpperCase()}!!!!{this.props.planetData.style}</Text>
+        <Text style={styles.planet}>WELCOME TO {this.props.planetData.name.toUpperCase()}!!!! {this.props.planetData.description}</Text>
         <Image source={this.props.planetData.img} />
       </View>
     )
