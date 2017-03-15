@@ -23,7 +23,7 @@ export default class Gameplay extends Component {
     }
   }
   componentDidMount() {
-      return fetch('https://o8l44zxq22.execute-api.us-west-2.amazonaws.com/beta/all').then(response => response.json()).then(universe => {
+      return fetch('http://ec2-52-25-158-107.us-west-2.compute.amazonaws.com/all').then(response => response.json()).then(universe => {
           this.setState({planets: universe});
           console.log('This State Be Cray ', this.state)
       }).catch(console.error)
@@ -41,7 +41,7 @@ export default class Gameplay extends Component {
       <Navigator
         initialRoute={{ component: PlanetMap }}
         renderScene={ this.renderScene } />
-      <TravelBar />
+        <TravelBar />
       </View>
     )
   }
