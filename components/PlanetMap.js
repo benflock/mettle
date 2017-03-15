@@ -59,7 +59,7 @@ export default class PlanetMap extends Component {
 let planets = {
   gar: {
     name: 'Gar',
-    imgSrc: require('../art_assets/planets/planet02.gif')
+    imgSrc: require('../art_assets/planets/planet02.gif'),
   },
   terraEpsilon: {
     name: 'Tera Epsilon',
