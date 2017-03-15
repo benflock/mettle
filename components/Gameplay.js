@@ -23,8 +23,8 @@ export default class Gameplay extends Component {
     }
   }
   componentDidMount() {
-      return fetch('https://o8l44zxq22.execute-api.us-west-2.amazonaws.com/beta').then(response => response.json()).then(json => {
-          this.setState({planets: json});
+      return fetch('https://o8l44zxq22.execute-api.us-west-2.amazonaws.com/beta/all').then(response => response.json()).then(universe => {
+          this.setState({planets: universe});
           console.log('This State Be Cray ', this.state)
       }).catch(console.error)
   }
