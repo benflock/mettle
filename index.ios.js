@@ -8,12 +8,13 @@ import HowToPlay from './components/HowToPlay'
 import MainButton from './components/MainButton'
 import InfoBar from './components/InfoBar';
 import {
-    AppRegistry,
-    StyleSheet,
-    Text,
-    View,
-    Navigator,
-    TouchableHighlight
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View,
+  Navigator,
+  TouchableHighlight,
+  Modal
 } from 'react-native';
 
 export default class App extends Component {
@@ -43,19 +44,26 @@ export class Home extends Component {
             }
         })
     }
+  state = {
+  modalVisible: false,
+}
 
-    render() {
-        return (
-            <View style={styles.container}>
-                <Text style={styles.heading}>Mettle</Text>
-                <MainButton title="New Game" navHandler={() => this._navigate('New Game', Gameplay)}/>
-                <MainButton title="Continue" navHandler={() => this._navigate('Continue', Continue)}/>
-                <MainButton title="Scores" navHandler={() => this._navigate('Scores', Scores)}/>
-                <MainButton title="Login" navHandler={() => this._navigate('Login', Login)}/>
-                <MainButton title="How To Play" navHandler={() => this._navigate('How To Play', HowToPlay)}/>
-            </View>
-        )
-    }
+setModalVisible(visible) {
+  this.setState({modalVisible: visible});
+}
+
+	render() {
+    return (
+    	<View style={ styles.container }>
+      	<Text style={ styles.heading }>Mettle</Text>
+          <MainButton title="New Game" navHandler={ () => this._navigate('New Game', Gameplay) }  />
+          <MainButton title="Continue" navHandler={ () => this._navigate('Continue', Continue) }  />
+          <MainButton title="Scores" navHandler={ () => this._navigate('Scores', Scores) }  />
+          <MainButton title="Login" navHandler={ () => this._navigate('Login', Login) }  />
+          <MainButton title="How To Play" navHandler={ () => this._navigate('How To Play', HowToPlay) }  />
+      </View>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
