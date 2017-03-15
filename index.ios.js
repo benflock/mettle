@@ -13,7 +13,8 @@ import {
   Text,
   View,
   Navigator,
-  TouchableHighlight
+  TouchableHighlight,
+  Modal
 } from 'react-native';
 
 export default class App extends Component {
@@ -44,6 +45,14 @@ export class Home extends Component {
       }
     })
   }
+
+  state = {
+  modalVisible: false,
+}
+
+setModalVisible(visible) {
+  this.setState({modalVisible: visible});
+}
 
 	render() {
     return (
