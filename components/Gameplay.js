@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PlanetMap from './PlanetMap'
 import InfoBar from './InfoBar';
+import TravelBar from './TravelBar';
 import {
   AppRegistry,
   StyleSheet,
@@ -37,13 +38,8 @@ export default class Gameplay extends Component {
     return (
       <View style={{ flex:1 }}>
       <InfoBar cargo={this.state.cargo} round={this.state.round} credits={this.state.credits} />
-      <Navigator
-        initialRoute={{ component: PlanetMap }}
-        renderScene={ this.renderScene } />
-<<<<<<< HEAD
-        <TravelBar />
-=======
->>>>>>> development
+      <Navigator initialRoute={{ component: PlanetMap }} renderScene={ this.renderScene } />
+      <TravelBar />
       </View>
     )
   }
