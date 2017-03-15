@@ -18,8 +18,15 @@ export default class Gameplay extends Component {
     this.state = {
       cargo: 100,
       round: 1,
-      credits: 100
+      credits: 100,
+      planets: []
     }
+  }
+  componentDidMount() {
+      return fetch('https://o8l44zxq22.execute-api.us-west-2.amazonaws.com/beta').then(response => response.json()).then(json => {
+          this.setState({planets: json});
+          console.log('This State Be Cray ', this.state)
+      }).catch(console.error)
   }
 
   renderScene(route, navigator) {
