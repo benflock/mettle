@@ -4,11 +4,12 @@ import {
   Text,
   View,
   TouchableHighlight,
+  TouchableOpacity
 } from 'react-native';
+import Modal from 'react-native-simple-modal';
 import InfoBar from './InfoBar';
 import ShopLayout from './ShopLayout';
 import PlanetButton from './PlanetButton'
-
 
 export default class PlanetMap extends Component {
 
@@ -36,16 +37,45 @@ export default class PlanetMap extends Component {
     }
 
     return (
-      <View style={styles.container}>
-        <Text style={styles.heading}>Travel to a planet</Text>
-        <PlanetButton img={require('../art_assets/planets/planet02.gif')} title="Gar" navHandler={ () => this._navigate(playerData, ShopLayout, planets.gar) }  />
-        <PlanetButton img={require('../art_assets/planets/planet04.gif')} title="Terra Epsilon" navHandler={ () => this._navigate(playerData, ShopLayout, planets.terraEpsilon) }  />
-        <PlanetButton img={require('../art_assets/planets/planet05.gif')} title="Niflhogg" navHandler={ () => this._navigate(playerData, ShopLayout, planets.niflhogg) }  />
-        <PlanetButton img={require('../art_assets/planets/station.gif')} title="Station Corbino" navHandler={ () => this._navigate(playerData, ShopLayout, planets.stationCorbino) }  />
-        <PlanetButton img={require('../art_assets/planets/planet01.gif')} title="Retheon" navHandler={ () => this._navigate(playerData, ShopLayout, planets.retheon) }  />
-        <PlanetButton img={require('../art_assets/planets/planet06.gif')} title="Desodrox Outpost" navHandler={ () => this._navigate(playerData, ShopLayout, planets.desodroxOutpost) }  />
-        <PlanetButton img={require('../art_assets/planets/planet03.gif')} title="Azaz" navHandler={ () => this._navigate(playerData, ShopLayout, planets.azaz) }  />
-        <PlanetButton img={require('../art_assets/planets/planet08.gif')} title="Zorvos" navHandler={ () => this._navigate(playerData, ShopLayout, planets.zorvos) }  />
+
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <TouchableOpacity onPress={() => this.setState({open: true})}>
+          <Text>Open modal</Text>
+        </TouchableOpacity>
+            <Text style={styles.heading}>Travel to a planet</Text>
+            <PlanetButton img={require('../art_assets/planets/planet02.gif')} title="Gar" navHandler={ () => this.setState({open: true}) }  />
+            <PlanetButton img={require('../art_assets/planets/planet04.gif')} title="Terra Epsilon" navHandler={ () => this._navigate(playerData, ShopLayout, planets.terraEpsilon) }  />
+            <PlanetButton img={require('../art_assets/planets/planet05.gif')} title="Niflhogg" navHandler={ () => this._navigate(playerData, ShopLayout, planets.niflhogg) }  />
+            <PlanetButton img={require('../art_assets/planets/station.gif')} title="Station Corbino" navHandler={ () => this._navigate(playerData, ShopLayout, planets.stationCorbino) }  />
+            <PlanetButton img={require('../art_assets/planets/planet01.gif')} title="Retheon" navHandler={ () => this._navigate(playerData, ShopLayout, planets.retheon) }  />
+            <PlanetButton img={require('../art_assets/planets/planet06.gif')} title="Desodrox Outpost" navHandler={ () => this._navigate(playerData, ShopLayout, planets.desodroxOutpost) }  />
+            <PlanetButton img={require('../art_assets/planets/planet03.gif')} title="Azaz" navHandler={ () => this._navigate(playerData, ShopLayout, planets.azaz) }  />
+            <PlanetButton img={require('../art_assets/planets/planet08.gif')} title="Zorvos" navHandler={ () => this._navigate(playerData, ShopLayout, planets.zorvos) }  />
+        <Modal
+          offset={this.state.offset}
+          open={this.state.open}
+          modalDidOpen={() => console.log('modal did open')}
+          modalDidClose={() => this.setState({open: false})}
+          style={{alignItems: 'center'}}>
+          <View>
+            <Text style={{fontSize: 20, marginBottom: 10}}>Hello world!</Text>
+            <TouchableOpacity
+            style={{margin: 5}}
+            onPress={() => this.setState({offset: -100})}>
+              <Text>Move modal up</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{margin: 5}}
+              onPress={() => this.setState({offset: 0})}>
+              <Text>Reset modal position</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{margin: 5}}
+              onPress={() => this.setState({open: false})}>
+              <Text>Close modal</Text>
+            </TouchableOpacity>
+          </View>
+        </Modal>
       </View>
     )
   }
