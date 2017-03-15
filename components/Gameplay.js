@@ -41,7 +41,7 @@ export default class Gameplay extends Component {
       <Navigator
         initialRoute={{ component: PlanetMap }}
         renderScene={ this.renderScene } />
-        <TravelBar />
+      <TravelBar />
       </View>
     )
   }

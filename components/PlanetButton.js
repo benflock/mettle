@@ -7,13 +7,13 @@ import {
   Image
 } from 'react-native';
 
-export default class MainButton extends Component {
+export default class PlanetButton extends Component {
 
   render() {
     return (
       <View>
         <TouchableHighlight style={ styles.button } onPress={ this.props.navHandler }>
-          <Text style={ styles.buttonText }>{ this.props.title }</Text>
+          <Image source={this.props.img} />
         </TouchableHighlight>
       </View>
     )
