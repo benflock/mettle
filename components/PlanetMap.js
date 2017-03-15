@@ -38,7 +38,7 @@ export default class PlanetMap extends Component {
 
     return (
 
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <View style={styles.container}>
         <TouchableOpacity onPress={() => this.setState({open: true})}>
           <Text>Open modal</Text>
         </TouchableOpacity>
@@ -160,6 +160,8 @@ let planets = {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    justifyContent: 'center',
     flex: 1,
     alignItems: 'center',
     backgroundColor: 'white'
