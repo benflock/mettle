@@ -21,6 +21,16 @@ export default class Gameplay extends Component {
       credits: 100
     }
   }
+  componentDidMount() {
+      return fetch('https://o8l44zxq22.execute-api.us-west-2.amazonaws.com/beta').then(response => {
+        console.log('response', response)
+        return response.json()
+      }).then(universe => {
+          this.setState({universe: universe});
+          planets = this.state.universe.planets
+          console.log('This State Be Cray ', this.state)
+      }).catch(console.error)
+  }
 
   renderScene(route, navigator) {
     let RouteComponent = route.component
