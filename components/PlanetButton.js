@@ -12,7 +12,7 @@ export default class PlanetButton extends Component {
   render() {
       return (
         <View>
-          <TouchableHighlight style={ styles.button } onPress={ this.props.navHandler }>
+          <TouchableHighlight style={styles.button} onPress={ this.props.navHandler }>
             <Image source={this.props.img} />
           </TouchableHighlight>
         </View>
@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   button: {
-    position: 'absolute', 
   	height:45,
+    width: 45,
     justifyContent: 'center',
     alignItems: 'center',
   },

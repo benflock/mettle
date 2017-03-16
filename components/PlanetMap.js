@@ -39,7 +39,7 @@ export default class PlanetMap extends Component {
     }
 
     const planetsMapped = this.props.planetData.map((planet) =>
-        <View key={planet.id} style={{position: 'absolute', top: planet.top, left: planet.left, right: planet.left, bottom: planet.bottom}}>
+        <View key={planet.id} style={{position: 'absolute', height: 45, width: 45, top: planet.top, left: planet.left, right: planet.left, bottom: planet.bottom}}>
           <PlanetButton
             img={planet.img}
             title="{planet.name}"
