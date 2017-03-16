@@ -64,11 +64,18 @@ export default class Gameplay extends Component {
             <View style={{
                 flex: 1
             }}>
-                <StatusBar hidden={true}/>
-                <InfoBar cargo={this.state.cargo} round={this.state.round} credits={this.state.credits}/>
-                <Navigator initialRoute={{
-                    component: PlanetMap
-                }} renderScene={this.renderScene}/>
+                <StatusBar
+                hidden={true}/>
+
+                <InfoBar
+                cargo={this.state.cargo}
+                round={this.state.round}
+                credits={this.state.credits}/>
+
+                <Navigator
+                initialRoute={{component: PlanetMap}}
+                renderScene={this.renderScene}/>
+                
             </View>
         )
     }
