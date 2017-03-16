@@ -28,6 +28,7 @@ export default class Gameplay extends Component {
   }
 
   render() {
+    console.log(this.state+" at PlanetMap");
     return (
       <View style={{ flex:1 }}>
         <StatusBar hidden={true} />
