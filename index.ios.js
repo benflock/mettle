@@ -78,6 +78,7 @@ export class Home extends Component {
           <MainButton title="Scores" navHandler={ () => this._navigate('Scores', Scores) }  />
           <MainButton title="Login" navHandler={ () => this._navigate('Login', Login) }  />
           <MainButton title="How To Play" navHandler={ () => this._navigate('How To Play', HowToPlay) }  />
+          <Image source={require('./art_assets/ship1.gif')} />
         </View>
       </LinearGradient>
     )
