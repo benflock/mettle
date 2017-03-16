@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import LinearGradient from 'react-native-linear-gradient';
 import {
   StyleSheet,
   Text,
@@ -14,20 +15,22 @@ export default class InfoBar extends Component {
 
   render() {
     return (
-      <View style={styles.InfoBar}>
-        <View style={[styles.boxLeft, styles.box]}>
-          <Text style={styles.font}>Credits</Text>
-          <Text style={styles.font}>{this.props.credits}</Text>
+      <LinearGradient colors={['#2ba8b0', '#2f002a']} style={styles.linearGradient}>
+        <View style={styles.InfoBar}>
+          <View style={[styles.boxLeft, styles.box]}>
+            <Text style={styles.font}>Credits</Text>
+            <Text style={styles.font}>{this.props.credits}</Text>
+          </View>
+          <View style={[styles.boxMiddle, styles.box]}>
+            <Text style={styles.font}>Round</Text>
+            <Text style={styles.font}>{this.props.round}</Text>
+          </View>
+          <View style={[styles.boxRight, styles.box]}>
+            <Text style={styles.font}>Cargo</Text>
+            <Text style={styles.font}>{this.props.cargo}</Text>
+          </View>
         </View>
-        <View style={[styles.boxMiddle, styles.box]}>
-          <Text style={styles.font}>Round</Text>
-          <Text style={styles.font}>{this.props.round}</Text>
-        </View>
-        <View style={[styles.boxRight, styles.box]}>
-          <Text style={styles.font}>Cargo</Text>
-          <Text style={styles.font}>{this.props.cargo}</Text>
-        </View>
-      </View>
+      </LinearGradient>
     )
   }
 }
@@ -35,7 +38,7 @@ export default class InfoBar extends Component {
 const styles = StyleSheet.create({
   InfoBar: {
     flexDirection: 'row',
-    backgroundColor: 'blue',
+    backgroundColor: 'rgba(250, 255, 255, 0.2)',
     justifyContent: 'space-between'
   },
   box: {

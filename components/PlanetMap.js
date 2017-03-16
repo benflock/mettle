@@ -10,13 +10,14 @@ import {
 import Modal from 'react-native-simple-modal';
 import InfoBar from './InfoBar';
 import ShopLayout from './ShopLayout';
-import PlanetButton from './PlanetButton'
+import PlanetButton from './PlanetButton';
 
 export default class PlanetMap extends Component {
 
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+    }
   }
 ComponentDidMount() {
   fetch('https://o8l44zxq22.execute-api.us-west-2.amazonaws.com/beta/player', {
@@ -79,6 +80,7 @@ ComponentDidMount() {
   })
 }
   _navigate(playerData, component, planetData) {
+    this.setState({ open:false })
     this.props.navigator.push({
       component: component,
       passProps: {
@@ -96,16 +98,19 @@ ComponentDidMount() {
     }
 
     const planetsMapped = this.props.planetData.map((planet) =>
-        <View key={planet.id}>
+        <View key={planet.id} style={{position: 'absolute', height: 45, width: 45, top: planet.top, left: planet.left, right: planet.left, bottom: planet.bottom}}>
           <PlanetButton
             img={planet.img}
             title="{planet.name}"
             navHandler={ () => this.setState({
-              open: true,
-              name: planet.name,
-              description: planet.description,
-              style: planet.style,
-              img: planet.img})
+                open: true,
+                name: planet.name,
+                description: planet.description,
+                style: planet.style,
+                img: planet.img,
+                offset: 150,
+
+              })
             }  />
         </View>
       )
@@ -118,19 +123,25 @@ ComponentDidMount() {
           open={this.state.open}
           modalDidOpen={() => console.log('modal did open')}
           modalDidClose={() => this.setState({open: false})}
-          style={{alignItems: 'center'}}>
-          <View style={{alignItems: 'center'}}>
+          modalStyle={{
+            borderRadius: 2,
+            margin: 20,
+            padding: 10,
+            backgroundColor: this.state.style
+          }}
+          animationDuration={1000}>
+          <View style={{alignItems: 'center', backgroundColor: this.state.style}}>
             <Text style={{fontSize: 30, marginBottom: 4}}>{this.state.name}</Text>
             <Text style={{fontSize: 20, marginBottom: 10}}>{this.state.description}</Text>
             <TouchableOpacity
               style={{margin: 8}}
               onPress={() => this._navigate(playerData, ShopLayout, this.state)}>
-              <Text>Travel</Text>
+              <Text style={{fontSize: 24}}>Travel</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={{margin: 8}}
               onPress={() => this.setState({open: false})}>
-              <Text>Cancel</Text>
+              <Text style={{fontSize: 24}}>Cancel</Text>
             </TouchableOpacity>
           </View>
         </Modal>
