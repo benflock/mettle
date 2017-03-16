@@ -3,35 +3,44 @@ import {
   StyleSheet,
   Text,
   View,
+  ListView,
   TouchableHighlight,
   TouchableOpacity,
   Image
 } from 'react-native';
 import Modal from 'react-native-simple-modal';
 import InfoBar from './InfoBar';
-import ShopResource from './ShopResource'
+import ShopResource from './ShopResource';
+import Row from './Row';
+import Data from './Data';
 
 
 
 export default class ShopLayout extends Component {
+  constructor(props) {
+    super(props);
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    this.state = {
+      dataSource: ds.cloneWithRows(Data),
+    };
+  }
 
   render() {
-
     const resourcesMapped = resources.map((resource) =>
         <View key={resource.id}>
           <ShopResource
-            img={resource.img}
+            img={{uri: resource.img}}
             title="{resource.name}"
               />
         </View>
       )
 
     return (
-      <View style={{flex: 1, alignItems: 'center', backgroundColor: this.props.planetData.style}}>
-        <Text style={styles.planet}>WELCOME TO {this.props.planetData.name.toUpperCase()}!!!! {this.props.planetData.description}</Text>
-        <Image source={this.props.planetData.img} />
-        {resourcesMapped}
-      </View>
+      <ListView
+        style={styles.container}
+        dataSource={this.state.dataSource}
+        renderRow={(data) => <Row {...data} />}
+      />
     )
   }
 }
@@ -42,7 +51,11 @@ const styles = StyleSheet.create({
    fontSize:14,
    marginBottom:10,
    marginTop: 10,
- }
+ },
+ container: {
+    flex: 1,
+    marginTop: 20,
+  }
 })
 
 let resources = [{
@@ -53,7 +66,7 @@ let resources = [{
    qty_base: 20,
    qty_range: 20,
    weight: 0.5,
-   img: require('../art_assets/resources/tacky_souveniers.gif')
+   img: '../art_assets/resources/tacky_souveniers.gif'
  },{
    id: 2,
    name: 'Space Vegetables',
@@ -62,7 +75,7 @@ let resources = [{
    qty_base: 15,
    qty_range: 20,
    weight: 1,
-   img: require('../art_assets/resources/space_vegetables.gif')
+   img:  '../art_assets/resources/space_vegetables.gif'
  },{
    id: 3,
    name: 'Spare Droid Parts',
@@ -71,7 +84,7 @@ let resources = [{
    qty_base: 10,
    qty_range: 25,
    weight: 8,
-   img: require('../art_assets/resources/spare_droid_parts.gif')
+   img:  '../art_assets/resources/spare_droid_parts.gif'
  },{
    id: 4,
    name: 'Bio-Meds',
@@ -80,7 +93,7 @@ let resources = [{
    qty_base: 30,
    qty_range: 20,
    weight: 1.5,
-   img: require('../art_assets/resources/bio_meds.gif')
+   img:  '../art_assets/resources/bio_meds.gif'
  },{
    id: 5,
    name: 'Garbast Barblezargs',
@@ -89,7 +102,7 @@ let resources = [{
    qty_base: 10,
    qty_range: 15,
    weight: 2,
-   img: require('../art_assets/resources/garbast_barblezargs.gif')
+   img:  '../art_assets/resources/garbast_barblezargs.gif'
  },{
    id: 6,
    name: 'Ancient Artifacts',
@@ -98,7 +111,7 @@ let resources = [{
    qty_base: 1,
    qty_range: 10,
    weight: 5,
-   img: require('../art_assets/resources/ancient_artifacts.gif')
+   img:  '../art_assets/resources/ancient_artifacts.gif'
  },{
    id: 7,
    name: 'Hyper Crystals',
@@ -107,7 +120,7 @@ let resources = [{
    qty_base: 2,
    qty_range: 4,
    weight: 6,
-   img: require('../art_assets/resources/hyper_crystals.gif')
+   img:  '../art_assets/resources/hyper_crystals.gif'
  },{
    id: 8,
    name: 'Spice',
@@ -116,7 +129,7 @@ let resources = [{
    qty_base: 15,
    qty_range: 25,
    weight: 0.2,
-   img: require('../art_assets/resources/spice.gif')
+   img:  '../art_assets/resources/spice.gif'
  },{
    id: 9,
    name: 'Weaponized Quantonium',
@@ -125,7 +138,7 @@ let resources = [{
    qty_base: 1,
    qty_range: 6,
    weight: 12,
-   img: require('../art_assets/resources/weaponized_quantonium.gif')
+   img:  '../art_assets/resources/weaponized_quantonium.gif'
  },{
    id: 10,
    name: 'Tiny Universe',
@@ -134,7 +147,7 @@ let resources = [{
    qty_base: 0,
    qty_range: 2,
    weight: 2,
-   img: require('../art_assets/resources/tiny_universe.gif')
+   img:  '../art_assets/resources/tiny_universe.gif'
  }]
 
  const planet_resources = [{
