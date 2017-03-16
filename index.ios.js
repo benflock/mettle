@@ -8,6 +8,11 @@ import HowToPlay from './components/HowToPlay'
 import MainButton from './components/MainButton'
 import InfoBar from './components/InfoBar';
 import LinearGradient from 'react-native-linear-gradient';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+
+import * as reducers from './reducers'
+
 import {
   AppRegistry,
   StyleSheet,
@@ -19,6 +24,10 @@ import {
   Modal
 } from 'react-native';
 
+const reducer = combineReducers(reducers);
+const store = createStore(reducer);
+
+
 export default class App extends Component {
 
   renderScene(route, navigator) {
@@ -28,10 +37,12 @@ export default class App extends Component {
 
   render() {
     return (
-      <Navigator
-        style={{ flex:1 }}
-        initialRoute={{ component: Home }}
-        renderScene={ this.renderScene } />
+      <Provider store={store}>
+        <Navigator
+          style={{ flex:1 }}
+          initialRoute={{ component: Home }}
+          renderScene={ this.renderScene } />
+      </Provider>
     )
   }
 }
@@ -49,12 +60,12 @@ export class Home extends Component {
   }
 
   state = {
-  modalVisible: false,
-}
+    modalVisible: false,
+  }
 
-setModalVisible(visible) {
-  this.setState({modalVisible: visible});
-}
+  setModalVisible(visible) {
+    this.setState({modalVisible: visible});
+  }
 
 	render() {
     return (

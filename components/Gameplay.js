@@ -31,7 +31,7 @@ export default class Gameplay extends Component {
     return (
       <View style={{ flex:1 }}>
         <StatusBar hidden={true} />
-        <InfoBar cargo={this.state.cargo} round={this.state.round} credits={this.state.credits} />
+        <InfoBar />
         <Navigator
           initialRoute={{ component: PlanetMap }}
           renderScene={ this.renderScene } />
