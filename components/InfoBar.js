@@ -15,14 +15,17 @@ export default class InfoBar extends Component {
   render() {
     return (
       <View style={styles.InfoBar}>
-        <View style={styles.boxLeft}>
-          <Text>Credits:{this.props.credits}</Text>
+        <View style={[styles.boxLeft, styles.box]}>
+          <Text style={styles.font}>Credits</Text>
+          <Text style={styles.font}>{this.props.credits}</Text>
         </View>
-        <View style={styles.boxMiddle}>
-          <Text>Round:{this.props.round}</Text>
+        <View style={[styles.boxMiddle, styles.box]}>
+          <Text style={styles.font}>Round</Text>
+          <Text style={styles.font}>{this.props.round}</Text>
         </View>
-        <View style={styles.boxRight}>
-          <Text>Cargo:{this.props.cargo}</Text>
+        <View style={[styles.boxRight, styles.box]}>
+          <Text style={styles.font}>Cargo</Text>
+          <Text style={styles.font}>{this.props.cargo}</Text>
         </View>
       </View>
     )
@@ -32,24 +35,28 @@ export default class InfoBar extends Component {
 const styles = StyleSheet.create({
   InfoBar: {
     flexDirection: 'row',
-    backgroundColor: 'lightblue',
-    marginTop: 24
+    backgroundColor: 'blue',
+    justifyContent: 'space-between'
+  },
+  box: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  font: {
+    fontSize: 20
   },
   boxRight: {
     width: 125,
     height: 75,
-    borderTopWidth: 2,
-    borderBottomWidth: 2
+    borderLeftWidth: 2
   },
   boxLeft: {
     width: 125,
     height: 75,
-    borderTopWidth: 2,
-    borderBottomWidth: 2
+    borderRightWidth: 2
   },
   boxMiddle: {
     width: 125,
     height: 75,
-    borderWidth: 2
   }
 })

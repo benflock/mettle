@@ -7,7 +7,8 @@ import {
   Text,
   View,
   Navigator,
-  TouchableHighlight
+  TouchableHighlight,
+  StatusBar
 } from 'react-native';
 
 export default class Gameplay extends Component {
@@ -29,6 +30,7 @@ export default class Gameplay extends Component {
   render() {
     return (
       <View style={{ flex:1 }}>
+      <StatusBar hidden={true} />
       <InfoBar cargo={this.state.cargo} round={this.state.round} credits={this.state.credits} />
       <Navigator
         initialRoute={{ component: PlanetMap }}
