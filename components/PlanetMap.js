@@ -38,7 +38,16 @@ export default class PlanetMap extends Component {
 
     const planetsMapped = planets.map((planet) =>
         <View key={planet.id}>
-          <PlanetButton img={planet.img} title="{planet.name}" navHandler={ () => this.setState({open: true, name: planet.name, description: planet.description, style: planet.style, img: planet.img}) }  />
+          <PlanetButton
+            img={planet.img}
+            title="{planet.name}"
+            navHandler={ () => this.setState({
+              open: true,
+              name: planet.name,
+              description: planet.description,
+              style: planet.style,
+              img: planet.img})
+            }  />
         </View>
       )
 
