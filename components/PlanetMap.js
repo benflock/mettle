@@ -10,7 +10,7 @@ import {
 import Modal from 'react-native-simple-modal';
 import InfoBar from './InfoBar';
 import ShopLayout from './ShopLayout';
-import PlanetButton from './PlanetButton'
+import PlanetButton from './PlanetButton';
 
 export default class PlanetMap extends Component {
 
