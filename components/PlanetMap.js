@@ -18,7 +18,66 @@ export default class PlanetMap extends Component {
     super(props)
     this.state = {}
   }
-
+ComponentDidMount() {
+  fetch('https://o8l44zxq22.execute-api.us-west-2.amazonaws.com/beta/player', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      player: {
+        id:,
+        current_round:,
+        current_credit:,
+        debt:,
+        weight_limit:
+      },
+      resources: [
+        {
+          resource_id: 1,
+          qty:
+        },
+        {
+          resource_id: 2,
+          qty:
+        },
+        {
+          resource_id: 3,
+          qty:
+        },
+        {
+          resource_id: 4,
+          qty:
+        },
+        {
+          resource_id: 5,
+          qty:
+        },
+        {
+          resource_id: 6,
+          qty:
+        },
+        {
+          resource_id: 7,
+          qty:
+        },
+        {
+          resource_id: 8,
+          qty:
+        },
+        {
+          resource_id: 9,
+          qty:
+        },
+        {
+          resource_id: 10,
+          qty:
+        }
+      ]
+    })
+  })
+}
   _navigate(playerData, component, planetData) {
     this.props.navigator.push({
       component: component,
