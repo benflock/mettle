@@ -27,7 +27,7 @@ export default class Gameplay extends Component {
         return response.json()
       }).then(universe => {
           this.setState({universe: universe});
-          planets = this.state.universe.planets
+          // planets = this.state.universe.planets
           console.log('This State Be Cray ', this.state)
       }).catch(console.error)
   }
