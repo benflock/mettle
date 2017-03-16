@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Image
 } from 'react-native';
+import Hr from 'react-native-hr'
 import Modal from 'react-native-simple-modal';
 import InfoBar from './InfoBar';
 import ShopLayout from './ShopLayout';
@@ -39,7 +40,16 @@ export default class PlanetMap extends Component {
     }
 
     const planetsMapped = this.props.planetData.map((planet) =>
-        <View key={planet.id} style={{position: 'absolute', height: 45, width: 45, top: planet.top, left: planet.left, right: planet.left, bottom: planet.bottom}}>
+        <View
+          key={planet.id}
+          style={{
+            position: 'absolute',
+            height: 45,
+            width: 45,
+            top: planet.top,
+            left: planet.left,
+            right: planet.left,
+            bottom: planet.bottom}}>
           <PlanetButton
             img={planet.img}
             title="{planet.name}"
@@ -49,7 +59,7 @@ export default class PlanetMap extends Component {
                 description: planet.description,
                 style: planet.style,
                 img: planet.img,
-                offset: 150,
+                offset: 160,
 
               })
             }  />
@@ -65,25 +75,27 @@ export default class PlanetMap extends Component {
           modalDidOpen={() => console.log('modal did open')}
           modalDidClose={() => this.setState({open: false})}
           modalStyle={{
-            borderRadius: 2,
+            borderRadius: 12,
             margin: 20,
             padding: 10,
-            backgroundColor: this.state.style
+            backgroundColor: '#2ba8b0'
           }}
           animationDuration={1000}>
-          <View style={{alignItems: 'center', backgroundColor: this.state.style}}>
-            <Text style={{fontSize: 30, marginBottom: 4}}>{this.state.name}</Text>
-            <Text style={{fontSize: 20, marginBottom: 10}}>{this.state.description}</Text>
+          <View style={{alignItems: 'center', backgroundColor: '#2ba8b0'}}>
+            <Text style={{fontSize: 32, marginBottom: 4, fontFamily: 'Rubrik Bold'}}>{this.state.name}</Text>
+            <Text style={{fontSize: 22, marginBottom: 10, fontFamily: 'Rubrik Medium', textAlign: 'center'}}>{this.state.description}</Text>
+            <View style={{justifyContent: 'space-between', flexDirection: 'row', paddingBottom: 5}}>
             <TouchableOpacity
-              style={{margin: 8}}
-              onPress={() => this._navigate(playerData, ShopLayout, this.state)}>
-              <Text style={{fontSize: 24}}>Travel</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={{margin: 8}}
+              style={{marginRight: 20, paddingLeft:20, paddingRight:20, paddingTop: 6, paddingBottom: 2}}
               onPress={() => this.setState({open: false})}>
-              <Text style={{fontSize: 24}}>Cancel</Text>
+              <Text style={{fontSize: 18, fontFamily: 'Rubrik'}}>Cancel</Text>
             </TouchableOpacity>
+            <TouchableOpacity
+              style={{marginLeft: 20, paddingLeft:20, paddingRight:20, paddingTop: 6, paddingBottom: 2,  borderWidth: 3, borderRadius: 12, borderColor: 'green'}}
+              onPress={() => this._navigate(playerData, ShopLayout, this.state)}>
+              <Text style={{fontSize: 18, fontFamily: 'Rubrik'}}>Travel</Text>
+            </TouchableOpacity>
+          </View>
           </View>
         </Modal>
       </Image>
@@ -111,7 +123,6 @@ const styles = StyleSheet.create({
   button: {
   	height:60,
     width: 600,
-    justifyContent: 'center',
     backgroundColor: '#efefef',
     alignItems: 'center',
     marginBottom: 30

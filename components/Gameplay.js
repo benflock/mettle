@@ -51,8 +51,6 @@ let planets = [
     neighbor2: 6,
     top: 140,
     left: 240,
-    right: 0,
-    bottom: 0
   },
   {
     id: 1,
@@ -64,8 +62,6 @@ let planets = [
     neighbor2: 2,
     top: 24,
     left: 300,
-    right: 0,
-    bottom: 0
   },
   {
     id: 2,
@@ -75,10 +71,8 @@ let planets = [
     style: '#B28D7E',
     neighbor1: 1,
     neighbor2: 4,
-    top: 80,
+    top: 70,
     left: 75,
-    right: 100,
-    bottom: 0
   },
   {
     id: 4,
@@ -89,9 +83,7 @@ let planets = [
     neighbor1: 6,
     neighbor2: 7,
     top: 200,
-    left: 50,
-    right: 0,
-    bottom: 0
+    left: 55,
   },
   {
     id: 5,
@@ -103,8 +95,6 @@ let planets = [
     neighbor2: 6,
     top: 400,
     left: 300,
-    right: 0,
-    bottom: 0
   },
   {
     id: 6,
@@ -116,8 +106,6 @@ let planets = [
     neighbor2: 8,
     top: 310,
     left: 180,
-    right: 0,
-    bottom: 0
   },
   {
     id: 7,
@@ -129,8 +117,6 @@ let planets = [
     neighbor2: 8,
     top: 340,
     left: 40,
-    right: 0,
-    bottom: 0
   },
   {
     id: 8,
@@ -142,7 +128,5 @@ let planets = [
     neighbor2: 7,
     top: 480,
     left: 120,
-    right: 0,
-    bottom: 0
   }
 ]
