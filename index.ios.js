@@ -1,6 +1,4 @@
-import React, {
-  Component
-} from 'react';
+import React, { Component } from 'react';
 import PlanetMap from './components/PlanetMap'
 import Gameplay from './components/Gameplay'
 import Continue from './components/Continue'
@@ -17,6 +15,7 @@ import {
   View,
   Navigator,
   TouchableHighlight,
+  Image,
   Modal
 } from 'react-native';
 
@@ -24,21 +23,15 @@ export default class App extends Component {
 
   renderScene(route, navigator) {
     let RouteComponent = route.component
-    return <RouteComponent navigator = {  navigator
-    } { ...route.passProps
-    }
-    />
+    return <RouteComponent navigator={navigator} {...route.passProps} />
   }
 
   render() {
-    return ( <  Navigator style = {
- {
-   flex: 1
- }  }  initialRoute = {
- {
-   component: Home
- }  }  renderScene = {
- this.renderScene  }  />
+    return (
+      <Navigator
+        style={{ flex:1 }}
+        initialRoute={{ component: Home }}
+        renderScene={ this.renderScene } />
     )
   }
 }
@@ -46,57 +39,78 @@ export default class App extends Component {
 export class Home extends Component {
 
   _navigate(title, component) {
-    this.props.navigator.push({  name: title,  component: component,  passProps: {
- title: title,  }
+  	this.props.navigator.push({
+    	name: title,
+      component: component,
+      passProps: {
+      	title: title,
+      }
     })
   }
 
   state = {
-    modalVisible: false,
-  }
+  modalVisible: false,
+}
 
-  setModalVisible(visible) {
-    this.setState({  modalVisible: visible
-    });
-  }
+setModalVisible(visible) {
+  this.setState({modalVisible: visible});
+}
 
-  render() {
-    return ( <  View style = {
- styles.container  } >  <  Text style = { styles.heading  } > Mettle < /Text>
- <  LinearGradient colors = { ['#4c669f', '#3b5998', '#192f6a']  }  style = { styles.linearGradient  } >
- <  MainButton title = "New Game"  navHandler = { () => this._navigate('New Game', Gameplay) }  />
- < /LinearGradient > <MainButton title = "Continue" navHandler = { () => this._navigate('Continue', Continue)      }      /> <      MainButton title = "Scores"      navHandler = { () => this._navigate('Scores', Scores)      }      /> <      MainButton title = "Login"      navHandler = { () => this._navigate('Login', Login)      }      /> <  MainButton title = "How To Play"  navHandler = {
- () => this._navigate('How To Play', HowToPlay)  }  /> < /  View >
+	render() {
+    return (
+      <LinearGradient colors={['#2ba8b0', '#2f002a']} style={styles.linearGradient}>
+    	  <View style={ styles.container }>
+          <Image style={ styles.title } source={require('./art_assets/logos/logo_handwriting_space_trader_bw.gif')} />
+          <Image style={ styles.subtitle } source={require('./art_assets/logos/logo_arcade_mettle.gif')} />
+          <MainButton title="New Game" navHandler={ () => this._navigate('New Game', Gameplay) }  />
+          <MainButton title="Continue" navHandler={ () => this._navigate('Continue', Continue) }  />
+          <MainButton title="Scores" navHandler={ () => this._navigate('Scores', Scores) }  />
+          <MainButton title="Login" navHandler={ () => this._navigate('Login', Login) }  />
+          <MainButton title="How To Play" navHandler={ () => this._navigate('How To Play', HowToPlay) }  />
+        </View>
+      </LinearGradient>
     )
   }
 }
 
 const styles = StyleSheet.create({
   linearGradient: {
-    flex: 1,
-    paddingLeft: 15,
-    paddingRight: 15,
-    borderRadius: 5
+    flex: 1
+  },
+  buttonText: {
+    fontSize: 18,
+    fontFamily: 'Gill Sans',
+    textAlign: 'center',
+    margin: 10,
+    color: '#ffffff',
+    backgroundColor: 'transparent',
   },
   container: {
     flex: 1,
     alignItems: 'center'
   },
-  heading: {
-    fontSize: 30,
-    marginBottom: 30,
+   heading: {
+  	fontSize:30,
+    marginBottom:30,
     marginTop: 40,
   },
+   title: {
+     marginBottom:0,
+     marginTop: 100,
+   },
+   subtitle: {
+     marginBottom:60,
+   },
   button: {
-    height: 60,
+  	height:60,
     width: 600,
     justifyContent: 'center',
-    backgroundColor: '#efefef',
+    backgroundColor: '#fefefe',
     alignItems: 'center',
     marginBottom: 30
   },
   buttonText: {
-    fontSize: 20
+  	fontSize:20
   }
 });
 
