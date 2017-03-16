@@ -13,7 +13,8 @@ import {
   Text,
   View,
   Navigator,
-  TouchableHighlight
+  TouchableHighlight,
+  Modal
 } from 'react-native';
 
 export default class App extends Component {
