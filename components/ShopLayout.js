@@ -29,7 +29,7 @@ export default class ShopLayout extends Component {
     const resourcesMapped = resources.map((resource) =>
         <View key={resource.id}>
           <ShopResource
-            img={{uri: resource.img}}
+            img={resource.img}
             title="{resource.name}"
               />
         </View>
@@ -66,7 +66,7 @@ let resources = [{
    qty_base: 20,
    qty_range: 20,
    weight: 0.5,
-   img: require('../art_assets/resources/tacky_souveniers.gif'
+   img: require('../art_assets/resources/tacky_souveniers.gif')
  },{
    id: 2,
    name: 'Space Vegetables',
@@ -75,7 +75,7 @@ let resources = [{
    qty_base: 15,
    qty_range: 20,
    weight: 1,
-   img:  require('../art_assets/resources/space_vegetables.gif'
+   img:  require('../art_assets/resources/space_vegetables.gif')
  },{
    id: 3,
    name: 'Spare Droid Parts',
@@ -84,7 +84,7 @@ let resources = [{
    qty_base: 10,
    qty_range: 25,
    weight: 8,
-   img:  require('../art_assets/resources/spare_droid_parts.gif'
+   img:  require('../art_assets/resources/spare_droid_parts.gif')
  },{
    id: 4,
    name: 'Bio-Meds',
@@ -93,7 +93,7 @@ let resources = [{
    qty_base: 30,
    qty_range: 20,
    weight: 1.5,
-   img:  require('../art_assets/resources/bio_meds.gif'
+   img:  require('../art_assets/resources/bio_meds.gif')
  },{
    id: 5,
    name: 'Garbast Barblezargs',
