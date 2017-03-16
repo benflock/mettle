@@ -46,7 +46,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   font: {
-    fontSize: 20
+    fontSize: 20,
+    fontFamily: 'Rubrik Medium'
   },
   boxRight: {
     width: 125,

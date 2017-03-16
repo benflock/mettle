@@ -59,8 +59,7 @@ export default class PlanetMap extends Component {
                 description: planet.description,
                 style: planet.style,
                 img: planet.img,
-                offset: 160,
-
+                offset: 100,
               })
             }  />
         </View>
@@ -82,20 +81,21 @@ export default class PlanetMap extends Component {
           }}
           animationDuration={1000}>
           <View style={{alignItems: 'center', backgroundColor: '#2ba8b0'}}>
-            <Text style={{fontSize: 32, marginBottom: 4, fontFamily: 'Rubrik Bold'}}>{this.state.name}</Text>
-            <Text style={{fontSize: 22, marginBottom: 10, fontFamily: 'Rubrik Medium', textAlign: 'center'}}>{this.state.description}</Text>
+            <Image source={this.state.img} style={{marginBottom:10, height: 100, width: 100, alignItems:'center'}} />
+            <Text style={{fontSize: 32, marginBottom: 4, fontFamily: 'Rubrik Bold', color: '#2f002a'}}>{this.state.name}</Text>
+            <Text style={{fontSize: 20, marginBottom: 10, fontFamily: 'Rubrik Medium', textAlign: 'center', color: '#2f002a'}}>{this.state.description}</Text>
             <View style={{justifyContent: 'space-between', flexDirection: 'row', paddingBottom: 5}}>
-            <TouchableOpacity
-              style={{marginRight: 20, paddingLeft:20, paddingRight:20, paddingTop: 6, paddingBottom: 2}}
-              onPress={() => this.setState({open: false})}>
-              <Text style={{fontSize: 18, fontFamily: 'Rubrik'}}>Cancel</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={{marginLeft: 20, paddingLeft:20, paddingRight:20, paddingTop: 6, paddingBottom: 2,  borderWidth: 3, borderRadius: 12, borderColor: 'green'}}
-              onPress={() => this._navigate(playerData, ShopLayout, this.state)}>
-              <Text style={{fontSize: 18, fontFamily: 'Rubrik'}}>Travel</Text>
-            </TouchableOpacity>
-          </View>
+              <TouchableOpacity
+                style={ styles.cancel }
+                onPress={() => this.setState({open: false})}>
+                <Text style={{fontSize: 20, fontFamily: 'Rubrik Medium', color: '#2f002a'}}>Cancel</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={ styles.travel }
+                onPress={() => this._navigate(playerData, ShopLayout, this.state)}>
+                <Text style={{fontSize: 20, fontFamily: 'Rubrik Medium', color: '#2f002a'}}>Travel</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </Modal>
       </Image>
@@ -129,5 +129,22 @@ const styles = StyleSheet.create({
   },
   buttonText: {
   	fontSize:20
+  },
+  travel: {
+    marginLeft: 20,
+    paddingLeft:20,
+    paddingRight:20,
+    paddingTop: 6,
+    paddingBottom: 2,
+    borderWidth: 3,
+    borderRadius: 12,
+    borderColor: 'green'
+  },
+  cancel: {
+    marginRight: 20,
+    paddingLeft:20,
+    paddingRight:20,
+    paddingTop: 6,
+    paddingBottom: 2
   }
 });
