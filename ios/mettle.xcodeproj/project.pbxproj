@@ -37,6 +37,11 @@
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		776F03761E7A195200929108 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 776F035C1E7A18C300929108 /* libBVLinearGradient.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		A4622B8D1E7B383C006554B7 /* Rubrik.otf in Resources */ = {isa = PBXBuildFile; fileRef = A4622B881E7B383B006554B7 /* Rubrik.otf */; };
+		A4622B8E1E7B383C006554B7 /* Rubrik Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A4622B891E7B383C006554B7 /* Rubrik Medium.otf */; };
+		A4622B8F1E7B383C006554B7 /* Rubrik Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A4622B8A1E7B383C006554B7 /* Rubrik Italic.otf */; };
+		A4622B901E7B383C006554B7 /* Rubrik ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = A4622B8B1E7B383C006554B7 /* Rubrik ExtraLight.otf */; };
+		A4622B911E7B383C006554B7 /* Rubrik Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A4622B8C1E7B383C006554B7 /* Rubrik Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -264,6 +269,11 @@
 		776F03571E7A18C200929108 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		A4622B881E7B383B006554B7 /* Rubrik.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Rubrik.otf; path = ../art_assets/Rubrik/Rubrik.otf; sourceTree = "<group>"; };
+		A4622B891E7B383C006554B7 /* Rubrik Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubrik Medium.otf"; path = "../art_assets/Rubrik/Rubrik Medium.otf"; sourceTree = "<group>"; };
+		A4622B8A1E7B383C006554B7 /* Rubrik Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubrik Italic.otf"; path = "../art_assets/Rubrik/Rubrik Italic.otf"; sourceTree = "<group>"; };
+		A4622B8B1E7B383C006554B7 /* Rubrik ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubrik ExtraLight.otf"; path = "../art_assets/Rubrik/Rubrik ExtraLight.otf"; sourceTree = "<group>"; };
+		A4622B8C1E7B383C006554B7 /* Rubrik Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubrik Bold.otf"; path = "../art_assets/Rubrik/Rubrik Bold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -482,6 +492,11 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				A4622B881E7B383B006554B7 /* Rubrik.otf */,
+				A4622B891E7B383C006554B7 /* Rubrik Medium.otf */,
+				A4622B8A1E7B383C006554B7 /* Rubrik Italic.otf */,
+				A4622B8B1E7B383C006554B7 /* Rubrik ExtraLight.otf */,
+				A4622B8C1E7B383C006554B7 /* Rubrik Bold.otf */,
 				13B07FAE1A68108700A75B9A /* mettle */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* mettleTests */,
@@ -873,8 +888,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4622B8D1E7B383C006554B7 /* Rubrik.otf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				A4622B911E7B383C006554B7 /* Rubrik Bold.otf in Resources */,
+				A4622B901E7B383C006554B7 /* Rubrik ExtraLight.otf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				A4622B8E1E7B383C006554B7 /* Rubrik Medium.otf in Resources */,
+				A4622B8F1E7B383C006554B7 /* Rubrik Italic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

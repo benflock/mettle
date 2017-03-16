@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Image
 } from 'react-native';
+import Hr from 'react-native-hr'
 import Modal from 'react-native-simple-modal';
 import InfoBar from './InfoBar';
 import ShopLayout from './ShopLayout';
@@ -98,7 +99,16 @@ ComponentDidMount() {
     }
 
     const planetsMapped = this.props.planetData.map((planet) =>
-        <View key={planet.id} style={{position: 'absolute', height: 45, width: 45, top: planet.top, left: planet.left, right: planet.left, bottom: planet.bottom}}>
+        <View
+          key={planet.id}
+          style={{
+            position: 'absolute',
+            height: 45,
+            width: 45,
+            top: planet.top,
+            left: planet.left,
+            right: planet.left,
+            bottom: planet.bottom}}>
           <PlanetButton
             img={planet.img}
             title="{planet.name}"
@@ -108,8 +118,7 @@ ComponentDidMount() {
                 description: planet.description,
                 style: planet.style,
                 img: planet.img,
-                offset: 150,
-
+                offset: 100,
               })
             }  />
         </View>
@@ -124,25 +133,28 @@ ComponentDidMount() {
           modalDidOpen={() => console.log('modal did open')}
           modalDidClose={() => this.setState({open: false})}
           modalStyle={{
-            borderRadius: 2,
+            borderRadius: 12,
             margin: 20,
             padding: 10,
-            backgroundColor: this.state.style
+            backgroundColor: '#2ba8b0'
           }}
           animationDuration={1000}>
-          <View style={{alignItems: 'center', backgroundColor: this.state.style}}>
-            <Text style={{fontSize: 30, marginBottom: 4}}>{this.state.name}</Text>
-            <Text style={{fontSize: 20, marginBottom: 10}}>{this.state.description}</Text>
-            <TouchableOpacity
-              style={{margin: 8}}
-              onPress={() => this._navigate(playerData, ShopLayout, this.state)}>
-              <Text style={{fontSize: 24}}>Travel</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={{margin: 8}}
-              onPress={() => this.setState({open: false})}>
-              <Text style={{fontSize: 24}}>Cancel</Text>
-            </TouchableOpacity>
+          <View style={{alignItems: 'center', backgroundColor: '#2ba8b0'}}>
+            <Image source={this.state.img} style={{marginBottom:10, height: 100, width: 100, alignItems:'center'}} />
+            <Text style={{fontSize: 32, marginBottom: 4, fontFamily: 'Rubrik Bold', color: '#2f002a'}}>{this.state.name}</Text>
+            <Text style={{fontSize: 20, marginBottom: 10, fontFamily: 'Rubrik Medium', textAlign: 'center', color: '#2f002a'}}>{this.state.description}</Text>
+            <View style={{justifyContent: 'space-between', flexDirection: 'row', paddingBottom: 5}}>
+              <TouchableOpacity
+                style={ styles.cancel }
+                onPress={() => this.setState({open: false})}>
+                <Text style={{fontSize: 20, fontFamily: 'Rubrik Medium', color: '#2f002a'}}>Cancel</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={ styles.travel }
+                onPress={() => this._navigate(playerData, ShopLayout, this.state)}>
+                <Text style={{fontSize: 20, fontFamily: 'Rubrik Medium', color: '#2f002a'}}>Travel</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </Modal>
       </Image>
@@ -170,12 +182,28 @@ const styles = StyleSheet.create({
   button: {
   	height:60,
     width: 600,
-    justifyContent: 'center',
     backgroundColor: '#efefef',
     alignItems: 'center',
     marginBottom: 30
   },
   buttonText: {
   	fontSize:20
+  },
+  travel: {
+    marginLeft: 20,
+    paddingLeft:20,
+    paddingRight:20,
+    paddingTop: 6,
+    paddingBottom: 2,
+    borderWidth: 3,
+    borderRadius: 12,
+    borderColor: 'green'
+  },
+  cancel: {
+    marginRight: 20,
+    paddingLeft:20,
+    paddingRight:20,
+    paddingTop: 6,
+    paddingBottom: 2
   }
 });
