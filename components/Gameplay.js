@@ -40,11 +40,11 @@ export default class Gameplay extends Component {
   render() {
     return (
       <View style={{ flex:1 }}>
-      <StatusBar hidden={true} />
-      <InfoBar cargo={this.state.cargo} round={this.state.round} credits={this.state.credits} />
-      <Navigator
-        initialRoute={{ component: PlanetMap }}
-        renderScene={ this.renderScene } />
+        <StatusBar hidden={true} />
+        <InfoBar cargo={this.state.cargo} round={this.state.round} credits={this.state.credits} />
+        <Navigator
+          initialRoute={{ component: PlanetMap }}
+          renderScene={ this.renderScene } />
       </View>
     )
   }
@@ -59,6 +59,10 @@ let planets = [
     style: '#B5E597',
     neighbor1: 5,
     neighbor2: 6,
+    top: 140,
+    left: 240,
+    right: 0,
+    bottom: 0
   },
   {
     id: 1,
@@ -67,7 +71,11 @@ let planets = [
     img: require('../art_assets/planets/planet04.gif'),
     style: '#4E993C',
     neighbor1: 3,
-    neighbor2: 2
+    neighbor2: 2,
+    top: 24,
+    left: 300,
+    right: 0,
+    bottom: 0
   },
   {
     id: 2,
@@ -76,7 +84,11 @@ let planets = [
     img: require('../art_assets/planets/planet06.gif'),
     style: '#B28D7E',
     neighbor1: 1,
-    neighbor2: 4
+    neighbor2: 4,
+    top: 80,
+    left: 75,
+    right: 100,
+    bottom: 0
   },
   {
     id: 4,
@@ -85,7 +97,11 @@ let planets = [
     img: require('../art_assets/planets/planet05.gif'),
     style: '#56CFE5',
     neighbor1: 6,
-    neighbor2: 7
+    neighbor2: 7,
+    top: 200,
+    left: 50,
+    right: 0,
+    bottom: 0
   },
   {
     id: 5,
@@ -94,7 +110,11 @@ let planets = [
     img: require('../art_assets/planets/planet01.gif'),
     style: '#E5D46C',
     neighbor1: 3,
-    neighbor2: 6
+    neighbor2: 6,
+    top: 400,
+    left: 300,
+    right: 0,
+    bottom: 0
   },
   {
     id: 6,
@@ -103,7 +123,11 @@ let planets = [
     img: require('../art_assets/planets/station.gif'),
     style: '#B487DE',
     neighbor1: 5,
-    neighbor2: 8
+    neighbor2: 8,
+    top: 310,
+    left: 180,
+    right: 0,
+    bottom: 0
   },
   {
     id: 7,
@@ -112,7 +136,11 @@ let planets = [
     img: require('../art_assets/planets/planet03.gif'),
     style: '#DE6438',
     neighbor1: 4,
-    neighbor2: 8
+    neighbor2: 8,
+    top: 340,
+    left: 40,
+    right: 0,
+    bottom: 0
   },
   {
     id: 8,
@@ -121,6 +149,10 @@ let planets = [
     img: require('../art_assets/planets/planet08.gif'),
     style: '#FF65DD',
     neighbor1: 6,
-    neighbor2: 7
+    neighbor2: 7,
+    top: 480,
+    left: 120,
+    right: 0,
+    bottom: 0
   }
 ]
