@@ -10,13 +10,13 @@ import {
 export default class PlanetButton extends Component {
 
   render() {
-    return (
-      <View>
-        <TouchableHighlight style={ styles.button } onPress={ this.props.navHandler }>
-          <Image source={this.props.img} />
-        </TouchableHighlight>
-      </View>
-    )
+      return (
+        <View>
+          <TouchableHighlight style={ styles.button } onPress={ this.props.navHandler }>
+            <Image source={this.props.img} />
+          </TouchableHighlight>
+        </View>
+      )
   }
 }
 
@@ -31,7 +31,14 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   button: {
+    position: 'absolute', 
   	height:45,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  button_two: {
+    position: 'absolute', top: 0, left: 75, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center',
+    height:45,
     justifyContent: 'center',
     alignItems: 'center',
   },

@@ -49,6 +49,10 @@ let planets = [
     style: '#B5E597',
     neighbor1: 5,
     neighbor2: 6,
+    top: 0,
+    left: 100,
+    right: 0,
+    bottom: 0
   },
   {
     id: 1,
@@ -57,7 +61,11 @@ let planets = [
     img: require('../art_assets/planets/planet04.gif'),
     style: '#4E993C',
     neighbor1: 3,
-    neighbor2: 2
+    neighbor2: 2,
+    top: 0,
+    left: 90,
+    right: 0,
+    bottom: 0
   },
   {
     id: 2,
@@ -66,7 +74,11 @@ let planets = [
     img: require('../art_assets/planets/planet06.gif'),
     style: '#B28D7E',
     neighbor1: 1,
-    neighbor2: 4
+    neighbor2: 4,
+    top: 0,
+    left: 80,
+    right: 0,
+    bottom: 0
   },
   {
     id: 4,
@@ -75,7 +87,11 @@ let planets = [
     img: require('../art_assets/planets/planet05.gif'),
     style: '#56CFE5',
     neighbor1: 6,
-    neighbor2: 7
+    neighbor2: 7,
+    top: 0,
+    left: 300,
+    right: 0,
+    bottom: 0
   },
   {
     id: 5,
@@ -84,7 +100,11 @@ let planets = [
     img: require('../art_assets/planets/planet01.gif'),
     style: '#E5D46C',
     neighbor1: 3,
-    neighbor2: 6
+    neighbor2: 6,
+    top: 0,
+    left: 100,
+    right: 75,
+    bottom: 0
   },
   {
     id: 6,
@@ -93,7 +113,11 @@ let planets = [
     img: require('../art_assets/planets/station.gif'),
     style: '#B487DE',
     neighbor1: 5,
-    neighbor2: 8
+    neighbor2: 8,
+    top: 32,
+    left: 50,
+    right: 12,
+    bottom: 90
   },
   {
     id: 7,
@@ -102,7 +126,11 @@ let planets = [
     img: require('../art_assets/planets/planet03.gif'),
     style: '#DE6438',
     neighbor1: 4,
-    neighbor2: 8
+    neighbor2: 8,
+    top: 0,
+    left: 45,
+    right: 19,
+    bottom: 60
   },
   {
     id: 8,
@@ -111,6 +139,10 @@ let planets = [
     img: require('../art_assets/planets/planet08.gif'),
     style: '#FF65DD',
     neighbor1: 6,
-    neighbor2: 7
+    neighbor2: 7,
+    top: 100,
+    left: 75,
+    right: 100,
+    bottom: 0
   }
 ]
