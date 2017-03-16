@@ -29,7 +29,6 @@ export default class PlanetMap extends Component {
     })
   }
 
-
   render() {
     let playerData = {
       cargo: this.state.cargo,
@@ -38,9 +37,9 @@ export default class PlanetMap extends Component {
     }
 
     const planetsMapped = planets.map((planet) =>
-    <View>
-          <PlanetButton img={planet.img} title="{planet.name}" navHandler={ () => this.setState({open: true}) }  />
-  </View>
+        <View key={planet.id}>
+          <PlanetButton img={planet.img} title="{planet.name}" navHandler={ () => this.setState({open: true, name: planet.name, description: planet.description, style: planet.style, img: planet.img}) }  />
+        </View>
       )
 
     return (
@@ -53,11 +52,11 @@ export default class PlanetMap extends Component {
           modalDidClose={() => this.setState({open: false})}
           style={{alignItems: 'center'}}>
           <View style={{alignItems: 'center'}}>
-            <Text style={{fontSize: 30, marginBottom: 4}}>planet.name</Text>
-            <Text style={{fontSize: 20, marginBottom: 10}}>planet.description</Text>
+            <Text style={{fontSize: 30, marginBottom: 4}}>{this.state.name}</Text>
+            <Text style={{fontSize: 20, marginBottom: 10}}>{this.state.description}</Text>
             <TouchableOpacity
               style={{margin: 8}}
-              onPress={() => this._navigate(playerData, ShopLayout, planets[0])}>
+              onPress={() => this._navigate(playerData, ShopLayout, this.state)}>
               <Text>Travel</Text>
             </TouchableOpacity>
             <TouchableOpacity
