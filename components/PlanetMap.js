@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Image
 } from 'react-native';
+import Hr from 'react-native-hr'
 import Modal from 'react-native-simple-modal';
 import InfoBar from './InfoBar';
 import ShopLayout from './ShopLayout';
@@ -16,10 +17,71 @@ export default class PlanetMap extends Component {
 
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+    }
   }
-
+ComponentDidMount() {
+  fetch('https://o8l44zxq22.execute-api.us-west-2.amazonaws.com/beta/player', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      player: {
+        id:,
+        current_round:,
+        current_credit:,
+        debt:,
+        weight_limit:
+      },
+      resources: [
+        {
+          resource_id: 1,
+          qty:
+        },
+        {
+          resource_id: 2,
+          qty:
+        },
+        {
+          resource_id: 3,
+          qty:
+        },
+        {
+          resource_id: 4,
+          qty:
+        },
+        {
+          resource_id: 5,
+          qty:
+        },
+        {
+          resource_id: 6,
+          qty:
+        },
+        {
+          resource_id: 7,
+          qty:
+        },
+        {
+          resource_id: 8,
+          qty:
+        },
+        {
+          resource_id: 9,
+          qty:
+        },
+        {
+          resource_id: 10,
+          qty:
+        }
+      ]
+    })
+  })
+}
   _navigate(playerData, component, planetData) {
+    this.setState({ open:false })
     this.props.navigator.push({
       component: component,
       passProps: {
@@ -36,17 +98,28 @@ export default class PlanetMap extends Component {
       credits: this.state.credits
     }
 
-    const planetsMapped = planets.map((planet) =>
-        <View key={planet.id}>
+    const planetsMapped = this.props.planetData.map((planet) =>
+        <View
+          key={planet.id}
+          style={{
+            position: 'absolute',
+            height: 45,
+            width: 45,
+            top: planet.top,
+            left: planet.left,
+            right: planet.left,
+            bottom: planet.bottom}}>
           <PlanetButton
             img={planet.img}
             title="{planet.name}"
             navHandler={ () => this.setState({
-              open: true,
-              name: planet.name,
-              description: planet.description,
-              style: planet.style,
-              img: planet.img})
+                open: true,
+                name: planet.name,
+                description: planet.description,
+                style: planet.style,
+                img: planet.img,
+                offset: 100,
+              })
             }  />
         </View>
       )
@@ -59,20 +132,29 @@ export default class PlanetMap extends Component {
           open={this.state.open}
           modalDidOpen={() => console.log('modal did open')}
           modalDidClose={() => this.setState({open: false})}
-          style={{alignItems: 'center'}}>
-          <View style={{alignItems: 'center'}}>
-            <Text style={{fontSize: 30, marginBottom: 4}}>{this.state.name}</Text>
-            <Text style={{fontSize: 20, marginBottom: 10}}>{this.state.description}</Text>
-            <TouchableOpacity
-              style={{margin: 8}}
-              onPress={() => this._navigate(playerData, ShopLayout, this.state)}>
-              <Text>Travel</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={{margin: 8}}
-              onPress={() => this.setState({open: false})}>
-              <Text>Cancel</Text>
-            </TouchableOpacity>
+          modalStyle={{
+            borderRadius: 12,
+            margin: 20,
+            padding: 10,
+            backgroundColor: '#2ba8b0'
+          }}
+          animationDuration={1000}>
+          <View style={{alignItems: 'center', backgroundColor: '#2ba8b0'}}>
+            <Image source={this.state.img} style={{marginBottom:10, height: 100, width: 100, alignItems:'center'}} />
+            <Text style={{fontSize: 32, marginBottom: 4, fontFamily: 'Rubrik Bold', color: '#2f002a'}}>{this.state.name}</Text>
+            <Text style={{fontSize: 20, marginBottom: 10, fontFamily: 'Rubrik Medium', textAlign: 'center', color: '#2f002a'}}>{this.state.description}</Text>
+            <View style={{justifyContent: 'space-between', flexDirection: 'row', paddingBottom: 5}}>
+              <TouchableOpacity
+                style={ styles.cancel }
+                onPress={() => this.setState({open: false})}>
+                <Text style={{fontSize: 20, fontFamily: 'Rubrik Medium', color: '#2f002a'}}>Cancel</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={ styles.travel }
+                onPress={() => this._navigate(playerData, ShopLayout, this.state)}>
+                <Text style={{fontSize: 20, fontFamily: 'Rubrik Medium', color: '#2f002a'}}>Travel</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </Modal>
       </Image>
@@ -100,89 +182,28 @@ const styles = StyleSheet.create({
   button: {
   	height:60,
     width: 600,
-    justifyContent: 'center',
     backgroundColor: '#efefef',
     alignItems: 'center',
     marginBottom: 30
   },
   buttonText: {
   	fontSize:20
+  },
+  travel: {
+    marginLeft: 20,
+    paddingLeft:20,
+    paddingRight:20,
+    paddingTop: 6,
+    paddingBottom: 2,
+    borderWidth: 3,
+    borderRadius: 12,
+    borderColor: 'green'
+  },
+  cancel: {
+    marginRight: 20,
+    paddingLeft:20,
+    paddingRight:20,
+    paddingTop: 6,
+    paddingBottom: 2
   }
 });
-
-
-
-let planets = [
-  {
-    id: 3,
-    name: 'Gar',
-    img: require('../art_assets/planets/planet02.gif'),
-    description: 'A green gas giant with a breathable nitrogen rich atmosphere.',
-    style: '#B5E597',
-    neighbor1: 5,
-    neighbor2: 6,
-  },
-  {
-    id: 1,
-    name: 'Terra Epsilon',
-    description: 'A comfortable terrestrial homeworld. Rich in low-end staples, but lacking high-end products.',
-    img: require('../art_assets/planets/planet04.gif'),
-    style: '#4E993C',
-    neighbor1: 3,
-    neighbor2: 2
-  },
-  {
-    id: 2,
-    name: 'Desodrox Outpost',
-    description: 'The lone surviving outpost on a post-apocalyptic desert world.',
-    img: require('../art_assets/planets/planet06.gif'),
-    style: '#B28D7E',
-    neighbor1: 1,
-    neighbor2: 4
-  },
-  {
-    id: 4,
-    name: 'Niflhogg',
-    description: 'A frozen frontier world where scavengers and explorers make up the bulk of the population.',
-    img: require('../art_assets/planets/planet05.gif'),
-    style: '#56CFE5',
-    neighbor1: 6,
-    neighbor2: 7
-  },
-  {
-    id: 5,
-    name: 'Retheon',
-    description: 'A yellow gas giant with gated communities and a reputation for stuck-up nobility.',
-    img: require('../art_assets/planets/planet01.gif'),
-    style: '#E5D46C',
-    neighbor1: 3,
-    neighbor2: 6
-  },
-  {
-    id: 6,
-    name: 'Station Corbino',
-    description: 'A terrestial dome secured to a floating patch of earth. Science and Technology reign here.',
-    img: require('../art_assets/planets/station.gif'),
-    style: '#B487DE',
-    neighbor1: 5,
-    neighbor2: 8
-  },
-  {
-    id: 7,
-    name: 'Azaz',
-    description: 'A blasted hellscape laden with rivers of fire and filled with bizarre and deadly creatures.',
-    img: require('../art_assets/planets/planet03.gif'),
-    style: '#DE6438',
-    neighbor1: 4,
-    neighbor2: 8
-  },
-  {
-    id: 8,
-    name: 'Zorvos',
-    description: "Homeworld of the mysterious Zorvogo people. Beautiful sunsets, but don't forget your ventilator or you will choke to death.",
-    img: require('../art_assets/planets/planet08.gif'),
-    style: '#FF65DD',
-    neighbor1: 6,
-    neighbor2: 7
-  }
-]
