@@ -7,6 +7,7 @@ import Login from './components/Login'
 import HowToPlay from './components/HowToPlay'
 import MainButton from './components/MainButton'
 import InfoBar from './components/InfoBar';
+import LinearGradient from 'react-native-linear-gradient';
 import {
   AppRegistry,
   StyleSheet,
@@ -14,6 +15,7 @@ import {
   View,
   Navigator,
   TouchableHighlight,
+  Image,
   Modal
 } from 'react-native';
 
@@ -56,19 +58,33 @@ setModalVisible(visible) {
 
 	render() {
     return (
-    	<View style={ styles.container }>
-      	<Text style={ styles.heading }>Mettle</Text>
+      <LinearGradient colors={['#2ba8b0', '#2f002a']} style={styles.linearGradient}>
+    	  <View style={ styles.container }>
+          <Image style={ styles.title } source={require('./art_assets/logos/logo_handwriting_space_trader_bw.gif')} />
+          <Image style={ styles.subtitle } source={require('./art_assets/logos/logo_arcade_mettle.gif')} />
           <MainButton title="New Game" navHandler={ () => this._navigate('New Game', Gameplay) }  />
           <MainButton title="Continue" navHandler={ () => this._navigate('Continue', Continue) }  />
           <MainButton title="Scores" navHandler={ () => this._navigate('Scores', Scores) }  />
           <MainButton title="Login" navHandler={ () => this._navigate('Login', Login) }  />
           <MainButton title="How To Play" navHandler={ () => this._navigate('How To Play', HowToPlay) }  />
-      </View>
+        </View>
+      </LinearGradient>
     )
   }
 }
 
 const styles = StyleSheet.create({
+  linearGradient: {
+    flex: 1
+  },
+  buttonText: {
+    fontSize: 18,
+    fontFamily: 'Gill Sans',
+    textAlign: 'center',
+    margin: 10,
+    color: '#ffffff',
+    backgroundColor: 'transparent',
+  },
   container: {
     flex: 1,
     alignItems: 'center'
@@ -78,11 +94,18 @@ const styles = StyleSheet.create({
     marginBottom:30,
     marginTop: 40,
   },
+   title: {
+     marginBottom:0,
+     marginTop: 100,
+   },
+   subtitle: {
+     marginBottom:60,
+   },
   button: {
   	height:60,
     width: 600,
     justifyContent: 'center',
-    backgroundColor: '#efefef',
+    backgroundColor: '#fefefe',
     alignItems: 'center',
     marginBottom: 30
   },
