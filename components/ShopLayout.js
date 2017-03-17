@@ -12,7 +12,6 @@ import Modal from 'react-native-simple-modal';
 import InfoBar from './InfoBar';
 import ShopResource from './ShopResource';
 import Row from './Row';
-import Data from './Data';
 import Header from './Header';
 import ShopHeader from './ShopHeader';
 import ShopFooter from './ShopFooter';
