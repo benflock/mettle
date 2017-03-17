@@ -39,12 +39,14 @@ export default class App extends Component {
 
   render() {
     return (
+      <LinearGradient colors={['#2ba8b0', '#2f002a']} style={styles.linearGradient}>
       <Provider store={store}>
         <Navigator
           style={{ flex:1 }}
           initialRoute={{ component: Home }}
           renderScene={ this.renderScene } />
       </Provider>
+      </LinearGradient>
     )
   }
 }
@@ -72,7 +74,6 @@ export class Home extends Component {
 
 	render() {
     return (
-      <LinearGradient colors={['#2ba8b0', '#2f002a']} style={styles.linearGradient}>
     	  <View style={ styles.container }>
           <Image style={ styles.title } source={require('./art_assets/logos/logo_handwriting_space_trader_bw.gif')} />
           <Image style={ styles.subtitle } source={require('./art_assets/logos/logo_arcade_mettle.gif')} />
@@ -85,8 +86,8 @@ export class Home extends Component {
           <MainButton title="Scores" navHandler={ () => this._navigate('Scores', Scores) }  />
           <MainButton title="Login" navHandler={ () => this._navigate('Login', Login) }  />
           <MainButton title="How To Play" navHandler={ () => this._navigate('How To Play', HowToPlay) }  />
+          <Image style={{ justifyContent: 'space-between', alignItems: 'center', marginTop: 55}} source={require('./art_assets/ship1.gif')} />
         </View>
-      </LinearGradient>
     )
   }
 }
@@ -113,7 +114,7 @@ const styles = StyleSheet.create({
   },
    title: {
      marginBottom:0,
-     marginTop: 100,
+     marginTop: 65,
    },
    subtitle: {
      marginBottom:60,
