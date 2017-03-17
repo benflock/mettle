@@ -5,6 +5,7 @@ import {
   View,
   TouchableHighlight
 } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
 export default class HowToPlay extends Component{
 	render() {
@@ -21,10 +22,12 @@ export default class HowToPlay extends Component{
 }
 
 const styles = StyleSheet.create({
+  linearGradient: {
+    flex: 1
+  },
   container: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: 'white'
   },
    heading: {
   	fontSize:30,
