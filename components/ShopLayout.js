@@ -36,7 +36,6 @@ export default class ShopLayout extends Component {
   }
 }
 
-
 const styles = StyleSheet.create({
   planet: {
    fontSize:14,
@@ -135,56 +134,4 @@ let resources = [{
    qty_range: 2,
    weight: 2,
    img: require('../art_assets/resources/tiny_universe.gif')
- }]
-
- const planet_resources = [{
-   planet_id: 1,
-   resource_id: 1,
-   qty_mod: 2,
-   price_mod: 0.8
- },{
-   planet_id: 1,
-   resource_id: 2,
-   qty_mod: 1,
-   price_mod: 0.5
- },{
-   planet_id: 1,
-   resource_id: 3,
-   qty_mod: 0.2,
-   price_mod: 0.5
- },{
-   planet_id: 1,
-   resource_id: 4,
-   qty_mod: 0.5,
-   price_mod: 0.8
- },{
-   planet_id: 1,
-   resource_id: 5,
-   qty_mod: 0,
-   price_mod: 0.5
- },{
-   planet_id: 1,
-   resource_id: 6,
-   qty_mod: 0.5,
-   price_mod: 1.5
- },{
-   planet_id: 1,
-   resource_id: 7,
-   qty_mod: 0,
-   price_mod: 1.5
- },{
-   planet_id: 1,
-   resource_id: 8,
-   qty_mod: 0,
-   price_mod: 1
- },{
-   planet_id: 1,
-   resource_id: 9,
-   qty_mod: 0.2,
-   price_mod: 2
- },{
-   planet_id: 1,
-   resource_id: 10,
-   qty_mod: 0,
-   price_mod: 2
  }]
