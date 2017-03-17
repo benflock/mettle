@@ -8,6 +8,7 @@ import HowToPlay from './components/HowToPlay'
 import MainButton from './components/MainButton'
 import InfoBar from './components/InfoBar';
 import LinearGradient from 'react-native-linear-gradient';
+import renderIf from './functions/renderIf';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 
@@ -21,7 +22,8 @@ import {
   Navigator,
   TouchableHighlight,
   Image,
-  Modal
+  Modal,
+  AsyncStorage
 } from 'react-native';
 
 const reducer = combineReducers(reducers);
@@ -59,6 +61,7 @@ export class Home extends Component {
     })
   }
 
+
   state = {
     modalVisible: false,
   }
@@ -74,7 +77,11 @@ export class Home extends Component {
           <Image style={ styles.title } source={require('./art_assets/logos/logo_handwriting_space_trader_bw.gif')} />
           <Image style={ styles.subtitle } source={require('./art_assets/logos/logo_arcade_mettle.gif')} />
           <MainButton title="New Game" navHandler={ () => this._navigate('New Game', Gameplay) }  />
-          <MainButton title="Continue" navHandler={ () => this._navigate('Continue', Continue) }  />
+          <View>
+            {renderIf(AsyncStorage.getItem('player').then(player => player),
+            <MainButton title="Continue" navHandler={ () => this._navigate('Continue', Continue) }  />
+          )}
+          </View>
           <MainButton title="Scores" navHandler={ () => this._navigate('Scores', Scores) }  />
           <MainButton title="Login" navHandler={ () => this._navigate('Login', Login) }  />
           <MainButton title="How To Play" navHandler={ () => this._navigate('How To Play', HowToPlay) }  />
