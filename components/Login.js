@@ -14,7 +14,7 @@ export default class Login extends Component{
  				<TouchableHighlight style={ styles.button } onPress={ () => this.props.navigator.pop() }>
       		<Text style={ styles.buttonText }>GO Back</Text>
       	</TouchableHighlight>
-        <Text>this is the loging page, NO JOKE</Text>
+        <Text>This is the loging page, NO JOKE</Text>
       </View>
     )
   }

@@ -15,7 +15,7 @@ export default class HowToPlay extends Component{
  				<TouchableHighlight style={ styles.button } onPress={ () => this.props.navigator.pop() }>
       		<Text style={ styles.buttonText }>GO Back</Text>
       	</TouchableHighlight>
-        <Text>this is the how to play page, NO JOKE</Text>
+        <Text>This is a trading game whee you travel to a planet each round in order to buy and sell various resources with the goal of tunring a profit.</Text>
       </View>
     )
   }

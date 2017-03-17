@@ -14,7 +14,7 @@ export default class Continue extends Component{
  				<TouchableHighlight style={ styles.button } onPress={ () => this.props.navigator.pop() }>
       		<Text style={ styles.buttonText }>GO Back</Text>
       	</TouchableHighlight>
-        <Text>This is the continue page, NO JOKE</Text>
+        <Text>This is the continue page, NO JOKE. Keep playing slacker!</Text>
       </View>
     )
   }
