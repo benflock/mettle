@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PlanetMap from './PlanetMap'
 import InfoBar from './InfoBar';
 import {
@@ -11,7 +11,6 @@ import {
   StatusBar,
   AsyncStorage
 } from 'react-native';
-
 
 const GameplayComponent = ({credits, round, cargo, incrementRound}) => (
     <View style={{ flex:1 }}>
@@ -147,25 +146,17 @@ export default Gameplay
 
 export default class Gameplay extends Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      cargo: 100,
-      round: 1,
-      credits: 100
+    constructor(props) {
+        super(props)
+        this.state = {
+            cargo: 100,
+            round: 1,
+            credits: 100,
+            debt: 10000
+        }
     }
   }
-<<<<<<< HEAD
-  componentDidMount() {
-      return fetch('https://o8l44zxq22.execute-api.us-west-2.amazonaws.com/beta').then(response => {
-        console.log('response', response)
-        return response.json()
-      }).then(universe => {
-          this.setState({universe: universe});
-          // planets = this.state.universe.planets
-          console.log('This State Be Cray ', this.state)
-      }).catch(console.error)
-=======
+
   componentWillMount() {
       return fetch('https://o8l44zxq22.execute-api.us-west-2.amazonaws.com/beta/player/new', {
           method: 'POST',
@@ -195,13 +186,12 @@ export default class Gameplay extends Component {
           })
       })
       .catch(console.error)
->>>>>>> 750d8eb008e69c4ec787658b407eca497115d381
   }
 
-  renderScene(route, navigator) {
-    let RouteComponent = route.component
-    return <RouteComponent planetData={planets} navigator={navigator} {...route.passProps} />
-  }
+    renderScene(route, navigator) {
+        let RouteComponent = route.component
+        return <RouteComponent planetData={planets} navigator={navigator} {...route.passProps}/>
+    }
 
   render() {
     console.log(this.state);
@@ -308,5 +298,6 @@ let planets = [
     top: 480,
     left: 120,
   }
+
 ]
 */
