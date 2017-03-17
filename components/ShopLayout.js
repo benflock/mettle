@@ -145,7 +145,6 @@ export default class ShopLayout extends Component {
   }
 }
 
-
 const styles = StyleSheet.create({
   planet: {
    fontSize:14,
