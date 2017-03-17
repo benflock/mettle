@@ -45,11 +45,9 @@ export default class PlanetMap extends Component {
           key={planet.id}
           style={{
             position: 'absolute',
-            height: 45,
-            width: 45,
             top: planet.top,
             left: planet.left,
-            right: planet.left,
+            right: planet.right,
             bottom: planet.bottom}}>
           <PlanetButton
             img={planet.img}
