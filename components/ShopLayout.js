@@ -126,7 +126,6 @@ export default class ShopLayout extends Component {
           <ShopResource
             img={resource.img}
             title={resource.name}
-            qty="4"
               />
         </View>
       )
@@ -653,7 +652,7 @@ const resources = [{
    qty_base: 1,
    qty_range: 6,
    weight: 12,
-   img:  require('../art_assets/resources/weaponized_quantonium.gif')
+   img: require('../art_assets/resources/weaponized_quantonium.gif')
  },{
    is_cargo: false,
    id: 10,
