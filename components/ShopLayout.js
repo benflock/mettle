@@ -63,7 +63,7 @@ export default class ShopLayout extends Component {
           }
         })
         let res_obj = {
-          is_cargo: false
+          is_cargo: false,
           id: resource.id,
           name: resource.name,
           price: Math.floor(price_mod*(resource.cost_base+(Math.random()*resource.cost_range))),
