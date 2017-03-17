@@ -12,7 +12,6 @@ import {
   AsyncStorage
 } from 'react-native';
 
-
 const GameplayComponent = ({credits, round, cargo, incrementRound}) => (
     <View style={{ flex:1 }}>
       <StatusBar hidden={true} />
@@ -157,6 +156,7 @@ export default class Gameplay extends Component {
         }
     }
   }
+
   componentWillMount() {
       return fetch('https://o8l44zxq22.execute-api.us-west-2.amazonaws.com/beta/player/new', {
           method: 'POST',
