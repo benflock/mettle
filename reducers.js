@@ -1,6 +1,6 @@
 
 var initialPlayerData = {
-  credits: 100,
+  credits: 900,
   round: 0,
   cargo: 100
 }
