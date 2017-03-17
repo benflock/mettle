@@ -36,9 +36,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: 'rgba(250, 255, 255, 0.2)',
     alignItems: 'center',
-    borderTopWidth: 1
+    borderTopWidth: 1,
   },
   buttonText: {
-  	fontSize:20
+  	fontSize:20,
+    fontFamily: 'Rubrik'
   }
 });

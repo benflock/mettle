@@ -13,6 +13,9 @@ import InfoBar from './InfoBar';
 export default class ShopLayout extends Component {
 
   render() {
+    console.log(this.state);
+    console.log("at ShopLayout");
+    console.log("-------------");
     return (
       <View style={{flex: 1, alignItems: 'center', backgroundColor: this.props.planetData.style}}>
         <Text style={styles.planet}>WELCOME TO {this.props.planetData.name.toUpperCase()}!!!! {this.props.planetData.description}</Text>
@@ -21,7 +24,6 @@ export default class ShopLayout extends Component {
     )
   }
 }
-
 
 const styles = StyleSheet.create({
   planet: {
