@@ -7,7 +7,7 @@ export default data = [
      qty_base: 20,
      qty_range: 20,
      weight: 0.5,
-     img: `require('../art_assets/resources/tacky_souveniers.gif')`
+     img: require('../art_assets/resources/tacky_souveniers.gif')
    },{
      id: 2,
      name: 'Space Vegetables',
@@ -16,7 +16,7 @@ export default data = [
      qty_base: 15,
      qty_range: 20,
      weight: 1,
-     img: `require('../art_assets/resources/space_vegetables.gif')`
+     img: require('../art_assets/resources/space_vegetables.gif')
    },{
      id: 3,
      name: 'Spare Droid Parts',
@@ -25,7 +25,7 @@ export default data = [
      qty_base: 10,
      qty_range: 25,
      weight: 8,
-     img: `require('../art_assets/resources/spare_droid_parts.gif')`
+     img: require('../art_assets/resources/spare_droid_parts.gif')
    },{
      id: 4,
      name: 'Bio-Meds',
@@ -34,7 +34,7 @@ export default data = [
      qty_base: 30,
      qty_range: 20,
      weight: 1.5,
-     img: `require('../art_assets/resources/bio_meds.gif')`
+     img: require('../art_assets/resources/bio_meds.gif')
    },{
      id: 5,
      name: 'Garbast Barblezargs',
@@ -43,7 +43,7 @@ export default data = [
      qty_base: 10,
      qty_range: 15,
      weight: 2,
-     img: `require('../art_assets/resources/garbast_barblezargs.gif')`
+     img: require('../art_assets/resources/garbast_barblezargs.gif')
    },{
      id: 6,
      name: 'Ancient Artifacts',
@@ -52,7 +52,7 @@ export default data = [
      qty_base: 1,
      qty_range: 10,
      weight: 5,
-     img: `require('../art_assets/resources/ancient_artifacts.gif')`
+     img: require('../art_assets/resources/ancient_artifacts.gif')
    },{
      id: 7,
      name: 'Hyper Crystals',
@@ -61,7 +61,7 @@ export default data = [
      qty_base: 2,
      qty_range: 4,
      weight: 6,
-     img: `require('../art_assets/resources/hyper_crystals.gif')`
+     img: require('../art_assets/resources/hyper_crystals.gif')
    },{
      id: 8,
      name: 'Spice',
@@ -70,7 +70,7 @@ export default data = [
      qty_base: 15,
      qty_range: 25,
      weight: 0.2,
-     img: `require('../art_assets/resources/spice.gif')`
+     img: require('../art_assets/resources/spice.gif')
    },{
      id: 9,
      name: 'Weaponized Quantonium',
@@ -79,7 +79,7 @@ export default data = [
      qty_base: 1,
      qty_range: 6,
      weight: 12,
-     img: `require('../art_assets/resources/weaponized_quantonium.gif')`
+     img: require('../art_assets/resources/weaponized_quantonium.gif')
    },{
      id: 10,
      name: 'Tiny Universe',
@@ -88,5 +88,5 @@ export default data = [
      qty_base: 0,
      qty_range: 2,
      weight: 2,
-     img: `require('../art_assets/resources/tiny_universe.gif')`
+     img: require('../art_assets/resources/tiny_universe.gif')
    }];

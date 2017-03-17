@@ -7,14 +7,17 @@ const styles = StyleSheet.create({
     padding: 12,
     flexDirection: 'row',
     alignItems: 'center',
+    backgroundColor: '#345678'
   },
   text: {
     marginLeft: 12,
     fontSize: 16,
+    flexDirection: 'column'
   },
   photo: {
     height: 40,
     width: 40,
+    flexDirection: 'column'
   },
 });
 
@@ -22,7 +25,7 @@ const Row = (props) => (
   <View style={styles.container}>
   <Image source={props.img} style={styles.photo} />
   <Text style={styles.text}>
-    {`${props.name} ${props.cost_base}`}
+    {`${props.name} ${Number(props.cost_base)+Math.floor(Math.random()*Number(props.cost_range))}`}
   </Text>
   </View>
 );

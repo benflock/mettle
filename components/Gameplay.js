@@ -23,36 +23,36 @@ export default class Gameplay extends Component {
             debt: 10000
         }
     }
-    componentWillMount() {
-        return fetch('https://o8l44zxq22.execute-api.us-west-2.amazonaws.com/beta/player/new', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                player: {
-                    current_round: 1,
-                    current_credit: 200,
-                    debt: 10000,
-                    weight_limit: 100
-                }
-            })
-        })
-        .then(response => response.json()).then(noob => {
-            AsyncStorage.setItem('player', JSON.stringify(noob[0]))
-            AsyncStorage.getItem('player').then(player => {
-                player = JSON.parse(player)
-                this.setState({
-                  cargo: player.weight_limit,
-                  debt: player.debt,
-                  credits: player.current_credit,
-                  round: player.current_round
-                });
-            })
-        })
-        .catch(console.error)
-    }
+    // componentWillMount() {
+    //     return fetch('https://o8l44zxq22.execute-api.us-west-2.amazonaws.com/beta/player/new', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Accept': 'application/json',
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({
+    //             player: {
+    //                 current_round: 1,
+    //                 current_credit: 200,
+    //                 debt: 10000,
+    //                 weight_limit: 100
+    //             }
+    //         })
+    //     })
+    //     .then(response => response.json()).then(noob => {
+    //         AsyncStorage.setItem('player', JSON.stringify(noob[0]))
+    //         AsyncStorage.getItem('player').then(player => {
+    //             player = JSON.parse(player)
+    //             this.setState({
+    //               cargo: player.weight_limit,
+    //               debt: player.debt,
+    //               credits: player.current_credit,
+    //               round: player.current_round
+    //             });
+    //         })
+    //     })
+    //     .catch(console.error)
+    // }
 
     renderScene(route, navigator) {
         let RouteComponent = route.component
