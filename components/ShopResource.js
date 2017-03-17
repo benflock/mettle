@@ -11,9 +11,9 @@ export default class ShopResource extends Component {
 
   render() {
     return (
-      <View style={{flexDirection: 'column', height: 74}}>
+      <View style={{height: 74}}>
           <Image source={this.props.img} />
-          <Text style={ styles.buttonText }>{ this.props.name }</Text>
+          <Text style={ styles.buttonText }>{ this.props.name } { this.props.qty }</Text>
       </View>
     )
   }
