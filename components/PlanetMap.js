@@ -66,6 +66,9 @@ export default class PlanetMap extends Component {
     return (
       <Image style={styles.background} source={require('../art_assets/deep-space.png')}>
         {planetsMapped}
+        <TouchableHighlight onPress={this.props.fetch}>
+          <Text style={{color: 'white'}}>Player Id: {this.props.playerId}</Text>
+        </TouchableHighlight>
         <Modal
           offset={this.state.offset}
           open={this.state.open}

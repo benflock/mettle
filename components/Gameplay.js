@@ -12,14 +12,14 @@ import {
   AsyncStorage
 } from 'react-native';
 
-const GameplayComponent = ({credits, round, cargo, incrementRound}) => (
+const GameplayComponent = ({credits, round, cargo, player_id, incrementRound, fetchPlayerData}) => (
     <View style={{ flex:1 }}>
       <StatusBar hidden={true} />
       <InfoBar credits={credits} round={round} cargo={cargo} />
       <Navigator
         initialRoute={{ component: PlanetMap }}
         renderScene={ (route, navigator) =>
-            <route.component planetData={planets} increment={incrementRound} navigator={navigator} {...route.passProps} />
+            <route.component planetData={planets} increment={incrementRound} playerId={player_id} fetch={fetchPlayerData} navigator={navigator} {...route.passProps} />
           } />
     </View>
 )
@@ -29,6 +29,7 @@ const mapStateToProps = (state, ownProps) => {
     credits: state.playerData.credits,
     round: state.playerData.round,
     cargo: state.playerData.cargo,
+    player_id: state.playerData.player_id
   }
 }
 
@@ -37,7 +38,8 @@ import { connect } from 'react-redux'
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    incrementRound: () => dispatch({type: "INCREMENT_ROUND"})
+    incrementRound: () => dispatch({type: "INCREMENT_ROUND"}),
+    fetchPlayerData: () => dispatch({type: "FETCH_PLAYER_DATA"})
   }
 }
 
