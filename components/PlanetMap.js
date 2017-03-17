@@ -21,34 +21,31 @@ export default class PlanetMap extends Component {
     }
   }
 
-  _navigate(playerData, component, planetData) {
+  _navigate(component, planetData, increment) {
+    increment()
     this.setState({ open:false })
     this.props.navigator.push({
       component: component,
       passProps: {
-        playerData: playerData,
         planetData: planetData,
       }
     })
+
   }
 
   render() {
-    let playerData = {
-      cargo: this.state.cargo,
-      round: this.state.round,
-      credits: this.state.credits
-    }
+    console.log(this.state);
+    console.log("at plaent map");
+    console.log("-------------");
 
     const planetsMapped = this.props.planetData.map((planet) =>
         <View
           key={planet.id}
           style={{
             position: 'absolute',
-            height: 45,
-            width: 45,
             top: planet.top,
             left: planet.left,
-            right: planet.left,
+            right: planet.right,
             bottom: planet.bottom}}>
           <PlanetButton
             img={planet.img}
@@ -59,7 +56,8 @@ export default class PlanetMap extends Component {
                 description: planet.description,
                 style: planet.style,
                 img: planet.img,
-                offset: 100,
+                offset: 0,
+                id: planet.id
               })
             }  />
         </View>
@@ -92,7 +90,7 @@ export default class PlanetMap extends Component {
               </TouchableOpacity>
               <TouchableOpacity
                 style={ styles.travel }
-                onPress={() => this._navigate(playerData, ShopLayout, this.state)}>
+                onPress={() => this._navigate(ShopLayout, this.state, this.props.increment)} >
                 <Text style={{fontSize: 20, fontFamily: 'Rubrik Medium', color: '#2f002a'}}>Travel</Text>
               </TouchableOpacity>
             </View>

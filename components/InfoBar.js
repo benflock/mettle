@@ -15,18 +15,13 @@ const InfoBarComponent = ({credits, round, cargo, incrementRound, decrementRound
         <Text style={styles.font}>{credits}</Text>
       </View>
       <View style={[styles.boxMiddle, styles.box]}>
-        <TouchableHighlight onPress={ incrementRound }>
-          <Text style={styles.font}>Round</Text>
-        </TouchableHighlight>
+        <Text style={styles.font}>Round</Text>
         <Text style={styles.font}>{round}</Text>
       </View>
       <View style={[styles.boxRight, styles.box]}>
-        <TouchableHighlight onPress={ decrementRound }>
-          <Text style={styles.font}>Cargo</Text>
-        </TouchableHighlight>
+        <Text style={styles.font}>Cargo</Text>
         <Text style={styles.font}>{cargo}</Text>
       </View>
-
     </View>
   </LinearGradient>
 )
